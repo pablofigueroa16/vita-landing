@@ -1,0 +1,108 @@
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 60px;
+  z-index: 50;
+
+  /* Glassmorphism base */
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.06) 100%
+    ),
+    rgba(12, 18, 36, 0.35);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 8px 24px rgba(16, 24, 40, 0.35);
+  backdrop-filter: blur(16px) saturate(135%);
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+}
+
+.navLogo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  height: 70px;
+  width: auto;
+  display: inline-block;
+  filter: drop-shadow(0 6px 18px rgba(16, 24, 40, 0.35));
+}
+
+.navList {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0 12px;
+  list-style: none;
+}
+
+.navItem {
+  display: flex;
+}
+
+.navButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  padding: 0 10px;
+  height: 48px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 200ms ease-out, background-color 200ms ease-out,
+    box-shadow 200ms ease-out;
+}
+
+.navIcon {
+  width: 24px;
+  height: 24px;
+  transition: transform 200ms ease-out, color 200ms ease-out;
+}
+
+.navButton:hover .navIcon {
+  transform: scale(1.1);
+}
+
+.navLabel {
+  margin-left: 8px;
+  font-size: 12px;
+  line-height: 1;
+  transition: color 200ms ease-out, opacity 200ms ease-out;
+}
+
+.navButton:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.navItem[data-active="true"] .navIcon {
+  /* Color de icono activo controlado por clases utilitarias (Tailwind) */
+}
+
+.navItem[data-active="true"] .navButton {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    height: 52px;
+    width: 92%;
+    border-radius: 14px;
+  }
+  .navButton {
+    min-width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+  .navLabel {
+    display: none; /* Oculta las etiquetas en pantallas pequeñas para mantener compacidad */
+  }
+}
