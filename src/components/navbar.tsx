@@ -1,103 +1,54 @@
 import styles from "./navbar.module.css"
 import { cn } from "@/lib/utils"
-import { HomeIcon } from "@/components/icons/home-icon"
-import { AboutIcon } from "@/components/icons/about-icon"
-import { FeaturesIcon } from "@/components/icons/features-icon"
-import { QuestionIcon } from "@/components/icons/question-icon"
-import ContactIcon from "@/components/icons/contact-icon"
 import Image from "next/image"
 
 export default function NavBar() {
   return (
-    <>
-      <Image
-        src="/vita-logo-blanco.png"
-        alt="Logo de VITA"
-        width={180}
-        height={60}
-        className={styles.navLogo}
-        priority
-      />
-      <nav className={styles.navbar} aria-label="Navegación principal">
-      <ul className={styles.navList} role="list">
-        <li className={cn(styles.navItem, "group")} data-active="true">
-          <button
-            type="button"
-            className={cn(styles.navButton, "hover:bg-secondary/15")}
-            aria-label="Inicio"
-            aria-current="page"
-          >
-            <HomeIcon
-              className={cn(
-                styles.navIcon,
-                "text-secondary/80 hover:text-primary group-data-[active=true]:text-primary"
-              )}
-            />
-            <span className={cn(styles.navLabel, "text-secondary/70 hover:text-primary group-data-[active=true]:text-primary")}>Inicio</span>
-          </button>
-        </li>
-        <li className={cn(styles.navItem, "group")}> 
-          <button
-            type="button"
-            className={cn(styles.navButton, "hover:bg-secondary/15")}
-            aria-label="Características"
-          >
-            <FeaturesIcon
-              className={cn(
-                styles.navIcon,
-                "text-secondary/80 hover:text-primary group-data-[active=true]:text-primary"
-              )}
-            />
-            <span className={cn(styles.navLabel, "text-secondary/70 hover:text-primary group-data-[active=true]:text-primary")}>Características</span>
-          </button>
-        </li>
-        <li className={cn(styles.navItem, "group")}>
-          <button
-            type="button"
-            className={cn(styles.navButton, "hover:bg-secondary/15")}
-            aria-label="Acerca de"
-          >
-            <AboutIcon
-              className={cn(
-                styles.navIcon,
-                "text-secondary/80 hover:text-primary group-data-[active=true]:text-primary"
-              )}
-            />
-            <span className={cn(styles.navLabel, "text-secondary/70 hover:text-primary group-data-[active=true]:text-primary")}>Acerca de</span>
-          </button>
-        </li>
-        <li className={cn(styles.navItem, "group")}>
-          <button
-            type="button"
-            className={cn(styles.navButton, "hover:bg-secondary/15")}
-            aria-label="Preguntas"
-          >
-            <QuestionIcon
-              className={cn(
-                styles.navIcon,
-                "text-secondary/80 hover:text-primary group-data-[active=true]:text-primary"
-              )}
-            />
-            <span className={cn(styles.navLabel, "text-secondary/70 hover:text-primary group-data-[active=true]:text-primary")}>Preguntas</span>
-          </button>
-        </li>
-        <li className={cn(styles.navItem, "group")}>
-          <button
-            type="button"
-            className={cn(styles.navButton, "hover:bg-secondary/15")}
-            aria-label="Contacto"
-          >
-            <ContactIcon
-              className={cn(
-                styles.navIcon,
-                "text-secondary/80 hover:text-primary group-data-[active=true]:text-primary"
-              )}
-            />
-            <span className={cn(styles.navLabel, "text-secondary/70 hover:text-primary group-data-[active=true]:text-primary")}>Contacto</span>
-          </button>
-        </li>
-      </ul>
-      </nav>
-    </>
+    <nav className={styles.navbar} aria-label="Navegación principal">
+      <div className={styles.navInner}>
+        <div className={styles.brand} aria-label="Marca">
+          <Image
+            src="/vita-logo-blanco.png"
+            alt="Logo de VITA"
+            width={58}
+            height={58}
+            className={styles.brandLogo}
+            priority
+          />
+        </div>
+        <ul className={styles.navList} role="list">
+          <li className={cn(styles.navItem)} data-active="true">
+            <button
+              type="button"
+              className={cn(styles.navButton)}
+              aria-label="Home"
+              aria-current="page"
+            >
+              <span className={styles.navLabel}>Inicio</span>
+            </button>
+          </li>
+          <li className={cn(styles.navItem)}>
+            <button type="button" className={cn(styles.navButton)} aria-label="features">
+              <span className={styles.navLabel}>Características</span>
+            </button>
+          </li>
+          <li className={cn(styles.navItem)}>
+            <button type="button" className={cn(styles.navButton)} aria-label="About">
+              <span className={styles.navLabel}>Acerca de</span>
+            </button>
+          </li>
+          <li className={cn(styles.navItem)}>
+            <button type="button" className={cn(styles.navButton)} aria-label="questions">
+              <span className={styles.navLabel}>Preguntas</span>
+            </button>
+          </li>
+          <li className={cn(styles.navItem)}>
+            <button type="button" className={cn(styles.navButton)} aria-label="contact">
+              <span className={styles.navLabel}>Contacto</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
   )
 }
