@@ -3,6 +3,7 @@ import Particles from "@/components/Particles";
 import StarBorder from "@/components/StarBorder";
 import TextType from "@/components/TextType";
 import ShinyText from "@/components/ShinyText";
+import SplitText from "@/components/SplitText";
 export default function Home() {
   return (
     <div className="relative min-h-screen w-full bg-[#0B0A17] overflow-x-hidden">
@@ -39,7 +40,7 @@ export default function Home() {
           <TextType
             as="h1"
             className="max-w-5xl text-white text-4xl font-bold md:text-7xl"
-            text={["Crea. Cobra. Escala"]}
+            text={["Crea, Cobra, Escala"]}
             typingSpeed={60}
             deletingSpeed={60}
             pauseDuration={1500}
@@ -55,10 +56,19 @@ export default function Home() {
             aria-live="polite"
           />
         </div>
-
-        <h2 className="max-w-5xl text-white text-2xl font-semibold md:text-5xl">
-          Todo en una sola plataforma
-        </h2>
+        <SplitText
+          text="Todo en una sola plataforma"
+          className="text-6xl font-bold text-center text-white"
+          delay={100}
+          duration={0.8}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+        />
         <p className="max-w-lg text-sm font-medium text-slate-200/80 md:text-lg">
           Diseña tu tienda en menos de 5 minutos, recibe pagos globales con
           Mastercard y vende solo a clientes verificados. Simple, rápido y
