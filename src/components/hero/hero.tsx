@@ -2,18 +2,19 @@ import NavBar from "@/components/navbar";
 import Particles from "@/components/Particles";
 import StarBorder from "@/components/StarBorder";
 import TextType from "@/components/TextType";
-import ShinyText from "@/components/ShinyText";
 import SplitText from "@/components/SplitText";
+import AnnouncementPill from "@/components/AnnouncementPill";
+import LiquidGlassButton from "@/components/LiquidGlassButton";
 const hero = () => {
   return (
     <>
       <div className="absolute inset-0 z-0">
         <Particles
-          particleColors={["#0077FF", "#0077FF"]}
-          particleCount={500}
+          particleColors={["#0077FF", "#0077FF","#0077FF"]}
+          particleCount={2000}
           particleSpread={10}
           speed={0.1}
-          particleBaseSize={50}
+          particleBaseSize={300}
           moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={false}
@@ -23,13 +24,7 @@ const hero = () => {
       </div>
       <NavBar />
       <div className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-24">
-        
-          <ShinyText
-            text="Bienvenidos al E-commerce Intelligence"
-            disabled={false}
-            speed={3}
-            className="custom-class"
-          />
+            <AnnouncementPill className="mb-2" />
         <div className="flex items-center justify-center">
           <TextType
             as="h1"
@@ -70,6 +65,11 @@ const hero = () => {
         </p>
 
         <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+          <LiquidGlassButton variant="primary">Lista de espera</LiquidGlassButton>
+          <LiquidGlassButton variant="secondary">Contactar ejecutivo</LiquidGlassButton>
+        </div>
+
+        {/* <div className="mt-4 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
           <StarBorder
             as="button"
             className="custom-class"
@@ -86,7 +86,7 @@ const hero = () => {
           >
             Contactar ejecutivo
           </StarBorder>
-        </div>
+        </div> */}
       </div>
     </>
   );
