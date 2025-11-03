@@ -6,11 +6,11 @@ import Hero from "@/components/hero/hero";
 import Issues from "@/components/issues/issues";
 import Solution from "@/components/solution/solution";
 import Team from "@/components/team/team";
-import { Contact } from "lucide-react";
+import Contact from "@/components/contact/contact";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full bg-[#0B0A17] overflow-x-hidden">
+    <div className="relative min-h-screen w-full bg-[#000000]">
       <Hero />
       <Issues />
       <About />

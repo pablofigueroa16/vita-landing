@@ -10,15 +10,16 @@ const hero = () => {
     <>
       <div className="absolute inset-0 z-0">
         <Particles
-          particleColors={["#0077FF", "#0077FF","#0077FF"]}
-          particleCount={2000}
+          // particleColors={["#0077FF", "#0077FF","#0077FF"]}
+          particleColors={["#0058E6"]}
+          particleCount={5000}
           particleSpread={10}
-          speed={0.1}
-          particleBaseSize={300}
+          speed={0.05}
+          particleBaseSize={120}
           moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={false}
-          backgroundColor="#0B0A17"
+          backgroundColor="#020307"
           className="pointer-events-none absolute inset-0 z-0"
         />
       </div>
