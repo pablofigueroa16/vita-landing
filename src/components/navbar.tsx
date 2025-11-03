@@ -9,10 +9,10 @@ export default function NavBar() {
         // Layout
         "fixed top-8 left-1/2 -translate-x-1/2 w-1/2 h-16 z-50",
         // Forma y borde
-        "rounded-2xl border border-white/30",
-        // Fondo estilo Liquid Glass: gradiente sutil + transparencia controlada
-        "bg-white bg-opacity-90",
-        "bg-gradient-to-r from-white/25 via-white/15 to-white/25",
+        "rounded-2xl border border-primary/30",
+        // Fondo estilo Liquid Glass con paleta personalizada
+        "bg-primary/35",
+        "bg-gradient-to-r from-primary/25 via-card/15 to-primary/25",
         // Desenfoque de fondo
         "backdrop-blur-md",
         // Sombra para profundidad
@@ -41,15 +41,16 @@ export default function NavBar() {
                 "group inline-flex items-center justify-center",
                 "min-w-[48px] px-3.5 h-12 rounded-full",
                 "border-0 bg-transparent cursor-pointer",
-                "transition-all hover:shadow-md",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                "transition-all",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               )}
               aria-label="Home"
               aria-current="page"
             >
               <span className={cn(
                 "text-base leading-none",
-                "text-white/90 font-semibold",
+                "font-semibold",
+                "text-brand",
                 "transition-colors"
               )}>
                 Inicio
@@ -64,15 +65,15 @@ export default function NavBar() {
                 "group inline-flex items-center justify-center",
                 "min-w-[48px] px-3.5 h-12 rounded-full",
                 "border-0 bg-transparent cursor-pointer",
-                "transition-all hover:shadow-md",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                "transition-all",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               )}
               aria-label="features"
             >
               <span className={cn(
                 "text-base leading-none",
-                "text-white/70",
-                "transition-colors group-hover:text-white/90"
+                "text-text-secondary",
+                "transition-colors group-hover:text-text group-active:text-brand"
               )}>
                 Características
               </span>
@@ -86,15 +87,15 @@ export default function NavBar() {
                 "group inline-flex items-center justify-center",
                 "min-w-[48px] px-3.5 h-12 rounded-full",
                 "border-0 bg-transparent cursor-pointer",
-                "transition-all hover:shadow-md",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                "transition-all",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               )}
               aria-label="About"
             >
               <span className={cn(
                 "text-base leading-none",
-                "text-white/70",
-                "transition-colors group-hover:text-white/90"
+                "text-text-secondary",
+                "transition-colors group-hover:text-text group-active:text-brand"
               )}>
                 Acerca de
               </span>
@@ -108,15 +109,15 @@ export default function NavBar() {
                 "group inline-flex items-center justify-center",
                 "min-w-[48px] px-3.5 h-12 rounded-full",
                 "border-0 bg-transparent cursor-pointer",
-                "transition-all hover:shadow-md",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                "transition-all",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               )}
               aria-label="questions"
             >
               <span className={cn(
                 "text-base leading-none",
-                "text-white/70",
-                "transition-colors group-hover:text-white/90"
+                "text-text-secondary",
+                "transition-colors group-hover:text-text group-active:text-brand"
               )}>
                 Preguntas
               </span>
@@ -130,15 +131,15 @@ export default function NavBar() {
                 "group inline-flex items-center justify-center",
                 "min-w-[48px] px-3.5 h-12 rounded-full",
                 "border-0 bg-transparent cursor-pointer",
-                "transition-all hover:shadow-md",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                "transition-all",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               )}
               aria-label="contact"
             >
               <span className={cn(
                 "text-base leading-none",
-                "text-white/70",
-                "transition-colors group-hover:text-white/90"
+                "text-text-secondary",
+                "transition-colors group-hover:text-text group-active:text-brand"
               )}>
                 Contacto
               </span>

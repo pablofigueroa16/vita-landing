@@ -1,7 +1,17 @@
+import ScrollFloat from "../ScrollFloat";
 const footer = () => {
   return (
     <div className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-24">
-      <h2 className="text-white text-4xl font-bold md:text-7xl">Footer</h2>
+      <ScrollFloat
+        animationDuration={1}
+        ease="back.inOut(2)"
+        scrollStart="center bottom+=50%"
+        scrollEnd="bottom bottom-=40%"
+        stagger={0.03}
+        containerClassName="text-text font-bold text-4xl md:text-7xl"
+      >
+        Footer
+      </ScrollFloat>
     </div>
   );
 }

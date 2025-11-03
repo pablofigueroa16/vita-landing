@@ -1,2 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@theme{
+  --color-bg: hsl(205 65% 7%);     
+  --color-card: hsl(205 55% 12%);   
+  --color-primary: hsl(205 50% 16%);
+
+  --color-brand: hsl(200 100% 45%);
+
+  --color-text: hsl(0 0% 95%);
+  --color-text-secondary: hsl(0 0% 70%);
+}
