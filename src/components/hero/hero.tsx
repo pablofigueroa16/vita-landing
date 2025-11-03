@@ -1,25 +1,23 @@
 import NavBar from "@/components/navbar";
 import Particles from "@/components/Particles";
-import StarBorder from "@/components/StarBorder";
 import TextType from "@/components/TextType";
 import SplitText from "@/components/SplitText";
 import AnnouncementPill from "@/components/AnnouncementPill";
-import LiquidGlassButton from "@/components/LiquidGlassButton";
+import Button from "@/components/Button";
 const hero = () => {
   return (
     <>
       <div className="absolute inset-0 z-0">
         <Particles
-          // particleColors={["#0077FF", "#0077FF","#0077FF"]}
-          particleColors={["#0058E6"]}
-          particleCount={5000}
+          particleColors={["#004c73"]}
+          particleCount={7000}
           particleSpread={10}
           speed={0.05}
           particleBaseSize={120}
           moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={false}
-          backgroundColor="#020307"
+          backgroundColor="#060d12"
           className="pointer-events-none absolute inset-0 z-0"
         />
       </div>
@@ -59,15 +57,15 @@ const hero = () => {
           rootMargin="-100px"
           textAlign="center"
         />
-        <p className="max-w-lg text-sm font-medium text-slate-200/80 md:text-lg">
+        <p className="max-w-lg text-sm font-medium text-text-secondary md:text-lg">
           Diseña tu tienda en menos de 5 minutos, recibe pagos globales con
           Mastercard y vende solo a clientes verificados. Simple, rápido y
           seguro para todos.
         </p>
 
         <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-          <LiquidGlassButton variant="primary">Lista de espera</LiquidGlassButton>
-          <LiquidGlassButton variant="secondary">Contactar ejecutivo</LiquidGlassButton>
+          <Button variant="primary">Lista de espera</Button>
+          <Button variant="secondary">Contactar ejecutivo</Button>
         </div>
 
         {/* <div className="mt-4 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
