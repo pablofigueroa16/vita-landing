@@ -10,16 +10,18 @@ import Contact from "@/components/contact/contact";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full bg-[#000000]">
-      <Hero />
-      <Issues />
-      <About />
-      <Solution />
-      <Features />
-      <Team />
-      <Faq />
-      <Contact />
-      <Footer />
+    <div className="relative min-h-screen w-full">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Hero />
+        <Issues />
+        <About />
+        <Solution />
+        <Features />
+        <Team />
+        <Faq />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import ProfileCard from "../ProfileCard";
 import ScrollFloat from "../ScrollFloat";
 const team = () => {
   return (
@@ -10,9 +11,35 @@ const team = () => {
         stagger={0.03}
         containerClassName="text-text font-bold text-4xl md:text-7xl"
       >
-        Equipo
+        Dream Team
       </ScrollFloat>
+      <div className="flex flex-row items-center justify-center gap-4">
+        <ProfileCard
+          name="Pablo E. Figueroa"
+          title="Software Engineer"
+          handle="pablofigueroa"
+          status="Online"
+          contactText="Contact Me"
+          avatarUrl="/pablo-removebg-preview.png"
+          iconUrl="/vita-logo-blanco.png"
+          showUserInfo={true}
+          enableTilt={true}
+          enableMobileTilt={false}
+        />
+        <ProfileCard
+          name="Manuel Ramos"
+          title="Software Engineer"
+          handle="menuelramos"
+          status="Online"
+          contactText="Contact Me"
+          avatarUrl="/manuel-removebg-preview.png"
+          iconUrl="/vita-logo-blanco.png"
+          showUserInfo={true}
+          enableTilt={true}
+          enableMobileTilt={false}
+        />
+      </div>
     </div>
   );
-}
+};
 export default team;
