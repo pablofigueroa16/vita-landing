@@ -15,12 +15,24 @@ const team = () => {
       </ScrollFloat>
       <div className="flex flex-row items-center justify-center gap-4">
         <ProfileCard
+          name="Victor Corvalan"
+          title="Software Engineer"
+          handle="victorcorvalan"
+          status="Online"
+          contactText="Contact Me"
+          avatarUrl="/victor-removebg-preview.png"
+          iconUrl="/vita-logo-blanco.png"
+          showUserInfo={true}
+          enableTilt={true}
+          enableMobileTilt={false}
+        />
+        <ProfileCard
           name="Pablo E. Figueroa"
           title="Software Engineer"
           handle="pablofigueroa"
           status="Online"
           contactText="Contact Me"
-          avatarUrl="/pablo-removebg-preview.png"
+          avatarUrl="/pablo3-removebg-preview10.png"
           iconUrl="/vita-logo-blanco.png"
           showUserInfo={true}
           enableTilt={true}
