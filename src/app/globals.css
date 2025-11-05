@@ -11,3 +11,133 @@
   --color-text: hsl(0 0% 95%);
   --color-text-secondary: hsl(0 0% 70%);
 }
+
+/* Utilidades de estilo coherentes con el navbar */
+.glass-card {
+  border-radius: 1rem; /* equivalente a rounded-2xl */
+  border: 1px solid hsl(205 50% 16% / 0.30); /* border-primary/30 */
+  background-color: hsl(205 55% 12% / 0.35); /* bg-card con transparencia */
+  background-image: linear-gradient(
+    to right,
+    hsl(205 50% 16% / 0.25), /* from-primary/25 */
+    hsl(205 55% 12% / 0.15), /* via-card/15 */
+    hsl(205 50% 16% / 0.25)  /* to-primary/25 */
+  );
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px hsl(205 50% 6% / 0.35); /* similar a shadow-xl */
+}
+
+.glass-button {
+  border-radius: 0.75rem; /* rounded-xl */
+  border: 1px solid hsl(205 50% 16% / 0.30);
+  background-image: linear-gradient(
+    to right,
+    hsl(205 50% 16% / 0.25),
+    hsl(205 55% 12% / 0.15),
+    hsl(205 50% 16% / 0.25)
+  );
+  background-color: hsl(205 55% 12% / 0.35);
+  color: var(--color-text);
+  transition: transform 150ms ease, background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+}
+.glass-button:hover {
+  transform: translateY(-1px);
+  background-color: hsl(205 50% 16% / 0.40);
+}
+.glass-button:active {
+  transform: translateY(0);
+}
+.glass-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(200 100% 45% / 0.8); /* ring-brand */
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px; /* rounded-full */
+  background-color: hsl(205 50% 16% / 0.35);
+  border: 1px solid hsl(205 50% 16% / 0.30);
+  color: var(--color-text);
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+.icon-btn:hover {
+  background-color: hsl(200 100% 45% / 0.20); /* hover usando brand */
+}
+.icon-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(200 100% 45% / 0.8);
+}
+
+.input-field {
+  background-color: hsl(205 50% 16% / 0.35);
+  border: 1px solid hsl(205 50% 16% / 0.25);
+  color: var(--color-text);
+  border-radius: 0.5rem; /* rounded-lg */
+  transition: box-shadow 150ms ease, border-color 150ms ease, background-color 150ms ease;
+}
+.input-field::placeholder {
+  color: hsl(0 0% 70% / 0.8);
+}
+.input-field:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(200 100% 45% / 0.9);
+  border-color: hsl(200 100% 45% / 0.6);
+}
+
+/* Utilidades para acordeón FAQ (coherentes con navbar) */
+.accordion-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem; /* p-5 aprox */
+  border-radius: 0.75rem; /* rounded-xl */
+  border: 1px solid hsl(205 50% 16% / 0.30); /* border-primary/30 */
+  background-color: hsl(205 55% 12% / 0.35); /* bg-card/35 */
+  background-image: linear-gradient(
+    to right,
+    hsl(205 50% 16% / 0.20),
+    hsl(205 55% 12% / 0.12),
+    hsl(205 50% 16% / 0.20)
+  );
+  color: var(--color-text);
+  transition: background-color 150ms ease, color 150ms ease, transform 150ms ease;
+}
+.accordion-btn:hover {
+  background-color: hsl(205 50% 16% / 0.40);
+}
+.accordion-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(200 100% 45% / 0.8); /* ring-brand */
+}
+
+.accordion-panel {
+  overflow: hidden;
+  padding: 0 1.25rem 1rem 1.25rem; /* px-5 pb-4 aprox */
+  color: var(--color-text-secondary);
+}
+
+.faq-cta {
+  border-radius: 0.75rem; /* rounded-lg */
+  border: 1px solid hsl(205 50% 16% / 0.30);
+  background-color: hsl(205 55% 12% / 0.35);
+  background-image: linear-gradient(
+    to right,
+    hsl(205 50% 16% / 0.25),
+    hsl(205 55% 12% / 0.15),
+    hsl(205 50% 16% / 0.25)
+  );
+  color: var(--color-text);
+  transition: transform 150ms ease, background-color 150ms ease, color 150ms ease;
+}
+.faq-cta:hover {
+  transform: translateY(-1px);
+  background-color: hsl(205 50% 16% / 0.40);
+}
+.faq-cta:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(200 100% 45% / 0.8);
+}
