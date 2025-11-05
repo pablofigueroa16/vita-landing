@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import Button from "../Button";
 
-// Datos de las preguntas frecuentes
 const faqData = [
   {
     question: "¿Qué está incluido en la prueba gratuita?",
@@ -33,7 +33,6 @@ const faqData = [
   },
 ];
 
-// Item del acordeón FAQ
 const FaqItem = ({
   question,
   answer,
@@ -49,25 +48,36 @@ const FaqItem = ({
     <motion.div
       initial={false}
       animate={{
-        backgroundColor: isOpen ? "rgba(255,255,255,0.05)" : "transparent",
+        backgroundColor: isOpen ? "rgba(32,54,68,0.35)" : "transparent",
       }}
       transition={{ duration: 0.3 }}
       onClick={onClick}
-      className="cursor-pointer rounded-lg"
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+      className="cursor-pointer rounded-xl"
     >
-      <div className="flex justify-between items-center p-5 border-b border-gray-200/20">
+      <div className="accordion-btn">
         <h4
-          className={`text-[16px] font-medium ${
-            isOpen ? "text-black dark:text-white" : "text-gray-700 dark:text-gray-300"
+          className={`text-md font-medium ${
+            isOpen ? "text-text" : "text-text-secondary"
           }`}
         >
           {question}
         </h4>
-        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
           {isOpen ? (
-            <Minus className="w-5 h-5 text-blue-500" />
+            <Minus className="w-5 h-5 text-brand" />
           ) : (
-            <Plus className="w-5 h-5 text-gray-400" />
+            <Plus className="w-5 h-5 text-text-secondary" />
           )}
         </motion.div>
       </div>
@@ -76,17 +86,14 @@ const FaqItem = ({
         initial={false}
         animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
-        className="overflow-hidden"
+        className="accordion-panel mb-2"
       >
-        <p className="text-gray-600 dark:text-gray-400 text-sm p-5 pt-0 leading-relaxed">
-          {answer}
-        </p>
+        <p className="text-sm p-2 leading-relaxed">{answer}</p>
       </motion.div>
     </motion.div>
   );
 };
 
-// Componente principal FAQ
 export default function SeccionFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -95,44 +102,34 @@ export default function SeccionFAQ() {
   };
 
   return (
-    <main className="min-h-screen text-black dark:text-white flex flex-col items-center justify-center px-6 py-20 overflow-hidden relative">
+    <main className="min-h-screen text-text flex flex-col items-center justify-center px-6 py-20 overflow-hidden relative">
       <section className="relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-12 items-start">
         {/* Columna izquierda */}
         <div className="p-8 md:p-0">
-          <p className="text-sm uppercase tracking-widest text-gray-500 mb-2 font-medium">
+          <p className="text-sm uppercase tracking-widest text-brand mb-2 font-medium">
             Preguntas frecuentes
           </p>
-          <h2 className="text-5xl font-extrabold mb-6 leading-tight">
+          <h2 className="text-5xl font-extrabold mb-6 leading-tight text-text">
             Estamos aquí para ayudarte
           </h2>
-          <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400 mb-10">
-            ¿Tienes preguntas? Tenemos respuestas. Explora las consultas más comunes sobre nuestra plataforma, precios, funciones y soporte.
+          <p className="text-lg leading-relaxed text-text-secondary mb-10">
+            ¿Tienes preguntas? Tenemos respuestas. Explora las consultas más
+            comunes sobre nuestra plataforma, precios, funciones y soporte.
           </p>
-
-          <motion.a
-            href="#"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center justify-center gap-2 py-3 px-8 rounded-lg font-semibold
-            border border-blue-500 text-blue-600 dark:text-blue-400 hover:bg-blue-500/10 transition-all"
-          >
-            Hacer una pregunta
-          </motion.a>
+          <Button variant="primary">Hacer una pregunta</Button>
         </div>
 
         {/* Columna derecha */}
-        <div className="rounded-xl overflow-hidden border border-gray-300/30 dark:border-gray-700/50 shadow-lg">
-          <div className="divide-y divide-gray-200/20 dark:divide-gray-700/40">
-            {faqData.map((item, index) => (
-              <FaqItem
-                key={index}
-                question={item.question}
-                answer={item.answer}
-                isOpen={openIndex === index}
-                onClick={() => toggleFaq(index)}
-              />
-            ))}
-          </div>
+        <div className="rounded-2xl overflow-hidden">
+          {faqData.map((item, index) => (
+            <FaqItem
+              key={index}
+              question={item.question}
+              answer={item.answer}
+              isOpen={openIndex === index}
+              onClick={() => toggleFaq(index)}
+            />
+          ))}
         </div>
       </section>
     </main>

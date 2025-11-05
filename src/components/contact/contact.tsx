@@ -36,19 +36,13 @@ export default function VitaApp() {
   
   // Clase base del botón con el estilo Liquid Glass modificado
   const buttonClasses = `
-    w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold transition-all 
-    hover:scale-[1.03] active:scale-[0.98]
-    
-    // Estilo Liquid Glass
-    bg-violet-900/10 backdrop-blur-md
-    border border-violet-500/30 shadow-lg shadow-violet-500/10
-    
-    // Colores
-    text-white hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-500
+    glass-button w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold
+    transition-all hover:scale-[1.03] active:scale-[0.98]
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand
   `;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
+    <main className="min-h-screen bg-bg text-text flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
       
       {/* Fondo animado */}
       <motion.div
@@ -67,7 +61,7 @@ export default function VitaApp() {
         <div className="p-8 md:p-0">
           
           <motion.p
-            className="text-sm uppercase tracking-widest text-teal-400 mb-2"
+            className="text-sm uppercase tracking-widest text-brand mb-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -76,7 +70,7 @@ export default function VitaApp() {
           </motion.p>
 
           <motion.h2
-            className="text-5xl md:text-6xl font-bold mb-6 text-white"
+            className="text-5xl md:text-6xl font-bold mb-6 text-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -85,7 +79,7 @@ export default function VitaApp() {
           </motion.h2>
 
           <motion.p
-            className="text-lg leading-relaxed text-gray-400 mb-10"
+            className="text-lg leading-relaxed text-text-secondary mb-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
@@ -103,40 +97,40 @@ export default function VitaApp() {
             
             {/* Email */}
             <div>
-              <p className="text-xl font-semibold mb-1 text-teal-300 flex items-center gap-2">
+              <p className="text-xl font-semibold mb-1 text-brand flex items-center gap-2">
                 <Mail className="w-5 h-5" /> Email:
               </p>
-              <p className="text-lg text-gray-300">soporte@vitaapp.com</p>
+              <p className="text-lg text-text">soporte@vitaapp.com</p>
             </div>
             
             {/* Teléfono */}
             <div>
-              <p className="text-xl font-semibold mb-1 text-teal-300 flex items-center gap-2">
+              <p className="text-xl font-semibold mb-1 text-brand flex items-center gap-2">
                 <Phone className="w-5 h-5" /> Teléfono:
               </p>
-              <p className="text-lg text-gray-300">+0 (800) 555-VITA</p>
+              <p className="text-lg text-text">+0 (800) 555-VITA</p>
             </div>
             
             {/* Dirección */}
             <div>
-              <p className="text-xl font-semibold mb-1 text-teal-300 flex items-center gap-2">
+              <p className="text-xl font-semibold mb-1 text-brand flex items-center gap-2">
                 <MapPin className="w-5 h-5" /> Dirección:
               </p>
-              <p className="text-lg text-gray-300">Vita Wellness Center, Av. Bienestar 123, Ciudad Digital</p>
+              <p className="text-lg text-text">Vita Wellness Center, Av. Bienestar 123, Ciudad Digital</p>
             </div>
 
             {/* Redes Sociales */}
             <div className="pt-4">
-              <p className="text-xl font-semibold mb-4 text-teal-300">Síguenos:</p>
+              <p className="text-xl font-semibold mb-4 text-brand">Síguenos:</p>
               <div className="flex space-x-4">
-                <a href="#" aria-label="Facebook" className="p-3 rounded-full bg-gray-800 hover:bg-teal-600 transition-colors border border-gray-700">
-                  <Facebook className="w-5 h-5 text-white" />
+                <a href="#" aria-label="Facebook" className="icon-btn">
+                  <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" aria-label="Twitter" className="p-3 rounded-full bg-gray-800 hover:bg-teal-600 transition-colors border border-gray-700">
-                  <Twitter className="w-5 h-5 text-white" />
+                <a href="#" aria-label="Twitter" className="icon-btn">
+                  <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" aria-label="Instagram" className="p-3 rounded-full bg-gray-800 hover:bg-teal-600 transition-colors border border-gray-700">
-                  <Instagram className="w-5 h-5 text-white" />
+                <a href="#" aria-label="Instagram" className="icon-btn">
+                  <Instagram className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -151,58 +145,65 @@ export default function VitaApp() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.9 }}
-          className="bg-gray-900/70 backdrop-blur-lg p-8 rounded-2xl shadow-2xl border border-violet-700/50"
+          className="glass-card p-8 rounded-2xl shadow-xl"
         >
-          <h3 className="text-2xl font-semibold mb-6 text-center text-teal-400">
+          <h3 className="text-2xl font-semibold mb-6 text-center text-brand">
             Envía un mensaje rápido
           </h3>
 
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1 text-gray-300">Nombre</label>
+            <label htmlFor="nombre" className="block text-sm font-medium mb-1 text-text-secondary">Nombre</label>
             <input
               type="text"
               name="nombre"
+              id="nombre"
               value={formData.nombre}
               onChange={handleChange}
               required
-              className="w-full bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all"
+              className="input-field w-full px-4 py-2"
               placeholder="Tu nombre"
             />
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1 text-gray-300">Correo electrónico</label>
+            <label htmlFor="email" className="block text-sm font-medium mb-1 text-text-secondary">Correo electrónico</label>
             <input
               type="email"
               name="email"
+              id="email"
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all"
+              className="input-field w-full px-4 py-2"
               placeholder="tu@email.com"
             />
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-medium mb-1 text-gray-300">Mensaje</label>
+            <label htmlFor="mensaje" className="block text-sm font-medium mb-1 text-text-secondary">Mensaje</label>
             <textarea
               name="mensaje"
+              id="mensaje"
               value={formData.mensaje}
               onChange={handleChange}
               required
               rows={4}
-              className="w-full bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all"
+              className="input-field w-full px-4 py-2"
               placeholder="Escribe tu mensaje o cuéntanos tu objetivo..."
             />
           </div>
           
           {/* Mensaje de estado */}
           {messageStatus && (
-            <div className={`mt-4 mb-4 p-3 rounded-xl text-center font-medium transition duration-500
-                ${messageStatus.includes("¡Mensaje enviado!") 
-                    ? 'bg-teal-900/50 text-teal-300 border border-teal-600'
-                    : 'bg-gray-800 text-gray-400 border border-gray-700'}`
-                }>
+            <div
+              role="status"
+              aria-live="polite"
+              className={`mt-4 mb-4 p-3 rounded-xl text-center font-medium transition duration-500
+                ${messageStatus.includes("¡Mensaje enviado!")
+                  ? 'bg-primary/35 text-brand border border-primary/40'
+                  : 'bg-card text-text-secondary border border-primary/25'}`
+              }
+            >
               {messageStatus}
             </div>
           )}
