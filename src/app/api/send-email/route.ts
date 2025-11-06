@@ -7,33 +7,42 @@ export async function POST(request: Request) {
   try {
     const { name, email } = await request.json();
 
-    // Leer plantilla base del correo
+    if (!name || !email) {
+      return NextResponse.json(
+        { success: false, message: "Faltan datos: nombre o email." },
+        { status: 400 }
+      );
+    }
+
+    // Leer plantilla HTML
     const templatePath = path.join(
       process.cwd(),
-      "app",
+      "public",
       "email",
       "vita-correo.html"
     );
+
     let htmlContent = fs.readFileSync(templatePath, "utf8");
 
-    // Reemplazar el nombre dinámicamente
     htmlContent = htmlContent.replace(/\[Nombre\]/g, name);
 
-    // Configurar el transporte (SMTP)
+    // Configurar transporte de correo
     const transporter = nodemailer.createTransport({
-      service: process.env.EMAIL_SERVICE,
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Configurar opciones del correo
+    // Configurar contenido del correo
     const mailOptions = {
       from: `"The Vita Soporte" <${process.env.EMAIL_USER}>`,
       to: email,
-      cc: process.env.EMAIL_USER,
-      subject: "Bienvenido a VITA 🚀",
+      cc: process.env.EMAIL_USER, // copia al correo de soporte
+      subject: `¡Bienvenido a VITA, ${name}!`,
       html: htmlContent,
       attachments: [
         {
@@ -49,7 +58,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: "Correo enviado correctamente",
+      message: `Correo enviado correctamente a ${name} (${email})`,
     });
   } catch (error) {
     console.error("Error enviando el correo:", error);
