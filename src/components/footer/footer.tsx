@@ -12,6 +12,7 @@ const footer = () => {
       >
         Footer
       </ScrollFloat>
+      <p>manuel</p>
     </div>
   );
 }
