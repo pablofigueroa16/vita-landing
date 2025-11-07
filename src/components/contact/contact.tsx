@@ -15,9 +15,11 @@ export default function VitaApp() {
     setMessageStatus(null);
   };
 
-  // Envío real al backend
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessageStatus(null);
 
-<<<<<<< HEAD
     setTimeout(() => {
       setMessageStatus(`¡Mensaje enviado! Gracias por conectar con Vita App, ${formData.nombre}.`);
       setFormData({ nombre: "", email: "", mensaje: "" });
@@ -25,40 +27,6 @@ export default function VitaApp() {
     }, 1000);
   };
 
-=======
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  setMessageStatus(null);
-
-  try {
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: formData.nombre,
-        email: formData.email,
-      }),
-    });
-
-    const data = await res.json();
-
-    if (res.ok && data.success) {
-      setMessageStatus(`✅ ${data.message}`);
-      setFormData({ nombre: "", email: "", mensaje: "" });
-    } else {
-      setMessageStatus(`❌ ${data.message || "No se pudo enviar el mensaje"}`);
-    }
-  } catch (error) {
-    console.error("Error enviando el mensaje:", error);
-    setMessageStatus("❌ Error de conexión con el servidor.");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
-  // Clase base del botón con el estilo Liquid Glass modificado
->>>>>>> main
   const buttonClasses = `
     glass-button w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold
     transition-all hover:scale-[1.03] active:scale-[0.98]
@@ -66,14 +34,8 @@ const handleSubmit = async (e: React.FormEvent) => {
   `;
 
   return (
-<<<<<<< HEAD
     <main className="min-h-screen bg-bg text-text flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
 
-=======
-    <main id="contact" className="min-h-screen bg-bg text-text flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
-      
-      {/* Fondo animado */}
->>>>>>> main
       <motion.div
         className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.15),transparent_60%)]"
         animate={{ opacity: [0.6, 0.8, 0.6] }}
