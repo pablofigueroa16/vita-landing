@@ -62,7 +62,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   `;
 
   return (
-    <main className="min-h-screen bg-bg text-text flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
+    <main id="contact" className="min-h-screen bg-bg text-text flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
       
       {/* Fondo animado */}
       <motion.div

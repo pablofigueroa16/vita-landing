@@ -87,6 +87,16 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
       const centerX = percentX - 50;
       const centerY = percentY - 50;
 
+      // --- Ajuste para limitar el tilt máximo ---
+      const maxTilt = 2; // 1) Máximo 5 grados
+      // Dividimos por 10 para suavizar la inclinación (antes se usaba /5 y /4)
+      const rawRotateX = -(centerX / 10);
+      const rawRotateY = centerY / 10;
+
+      const rotateX = round(Math.min(Math.max(rawRotateX, -maxTilt), maxTilt));
+      const rotateY = round(Math.min(Math.max(rawRotateY, -maxTilt), maxTilt));
+      // -------------------------------------------
+
       const properties = {
         '--pointer-x': `${percentX}%`,
         '--pointer-y': `${percentY}%`,
@@ -95,8 +105,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
         '--pointer-from-center': `${clamp(Math.hypot(percentY - 50, percentX - 50) / 50, 0, 1)}`,
         '--pointer-from-top': `${percentY / 100}`,
         '--pointer-from-left': `${percentX / 100}`,
-        '--rotate-x': `${round(-(centerX / 5))}deg`,
-        '--rotate-y': `${round(centerY / 4)}deg`
+        '--rotate-x': `${rotateX}deg`, // 1) ya clampeado a +/-5deg
+        '--rotate-y': `${rotateY}deg`
       };
 
       Object.entries(properties).forEach(([property, value]) => {
