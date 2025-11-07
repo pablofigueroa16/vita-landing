@@ -14,7 +14,11 @@ export default function NavBar() {
       { id: "issues", label: "Problema", ariaLabel: "Problema" },
       { id: "about", label: "Acerca de", ariaLabel: "Acerca de" },
       { id: "solution", label: "Solución", ariaLabel: "Solución" },
-      { id: "features", label: "Funcionalidades", ariaLabel: "Funcionalidades" },
+      {
+        id: "features",
+        label: "Funcionalidades",
+        ariaLabel: "Funcionalidades",
+      },
       { id: "team", label: "Equipo", ariaLabel: "Equipo" },
       { id: "faq", label: "Preguntas", ariaLabel: "Preguntas" },
       { id: "contact", label: "Contacto", ariaLabel: "Contacto" },
@@ -27,7 +31,8 @@ export default function NavBar() {
     const startY = window.scrollY;
     const deltaY = targetY - startY;
     const startTime = performance.now();
-    const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+    const easeInOutCubic = (t: number) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
     const step = (now: number) => {
       const elapsed = now - startTime;
@@ -119,7 +124,7 @@ export default function NavBar() {
 
   return (
     <nav
-      ref={(n) => (navRef.current = n)}
+      ref={navRef}
       aria-label="Navegación principal"
       className={cn(
         "fixed top-8 left-1/2 -translate-x-1/2 w-3/4 h-16 z-50",
@@ -143,14 +148,17 @@ export default function NavBar() {
             priority
           />
         </div>
-        <ul className="flex justify-end items-center h-full m-0 px-3 gap-7 list-none" role="list">
+        <ul
+          className="flex justify-end items-center h-full m-0 px-3 gap-7 list-none"
+          role="list"
+        >
           {items.map((item) => {
             const isActive = activeSection === item.id;
             return (
               <li
                 key={item.id}
                 className={cn(
-                  "flex transition-transform hover:-translate-y-0.5 focus-within:-translate-y-0.5",
+                  "flex transition-transform hover:-translate-y-0.5 focus-within:-translate-y-0.5"
                 )}
               >
                 <button
@@ -176,7 +184,9 @@ export default function NavBar() {
                   <span
                     className={cn(
                       "text-base leading-none ",
-                      isActive ? "font-semibold text-brand" : "text-text-secondary",
+                      isActive
+                        ? "font-semibold text-brand"
+                        : "text-text-secondary",
                       "transition-colors  group-active:text-brand"
                     )}
                   >
