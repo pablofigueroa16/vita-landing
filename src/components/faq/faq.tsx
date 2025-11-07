@@ -102,7 +102,7 @@ export default function SeccionFAQ() {
   };
 
   return (
-    <main className="min-h-screen text-text flex flex-col items-center justify-center px-6 py-20 overflow-hidden relative">
+    <main id="faq" className="min-h-screen text-text flex flex-col items-center justify-center px-6 py-20 overflow-hidden relative">
       <section className="relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-12 items-start">
         {/* Columna izquierda */}
         <div className="p-8 md:p-0">
