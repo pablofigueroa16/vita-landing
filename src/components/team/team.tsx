@@ -9,10 +9,23 @@ const team = () => {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
-        containerClassName="text-text font-bold text-4xl md:text-7xl"
+        containerClassName="text-text font-bold text-4xl md:text-5xl"
       >
         Dream Team
       </ScrollFloat>
+      <ScrollFloat
+        animationDuration={1}
+        ease="back.inOut(2)"
+        scrollStart="center bottom+=50%"
+        scrollEnd="bottom bottom-=40%"
+        stagger={0.03}
+        containerClassName="text-text font-bold text-4xl md:text-7xl"
+      >
+        En busca de los cofundadores ideales
+      </ScrollFloat>
+      <h2 className="text-text-secondary font-bold text-4xl md:text-5xl">
+        Los más grandes están por llegar
+      </h2>
       <div className="flex flex-row items-center justify-center gap-4">
         <ProfileCard
           name="Victor Corvalan"
