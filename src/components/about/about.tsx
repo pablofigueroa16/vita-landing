@@ -3,7 +3,7 @@ import ScrollReveal from "../ScrollReveal";
 import SpotlightCard from "../SpotlightCard";
 const about = () => {
   return (
-    <div className="relative w-full z-10 flex flex-col items-center justify-center gap-4  text-center px-6 pt-24">
+    <div id="about" className="relative w-full z-10 flex flex-col items-center justify-center gap-4  text-center px-6 pt-24">
       <ScrollFloat
         animationDuration={1}
         ease="back.inOut(2)"

@@ -63,7 +63,7 @@
 
 .pc-card {
   height: 80svh;
-  max-height: 540px;
+  max-height: 500px;
   display: grid;
   aspect-ratio: 0.718;
   border-radius: var(--card-radius);
@@ -573,4 +573,30 @@
     font-size: 9px;
     border-radius: 50px;
   }
+}
+/* Vacant state hover effect to highlight available positions */
+.pc-card-wrapper.pc-vacant .pc-card {
+  outline: 1px solid hsl(200 100% 45% / 0.25);
+  transition: outline-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+.pc-card-wrapper.pc-vacant:hover .pc-card,
+.pc-card-wrapper.pc-vacant:focus-within .pc-card {
+  outline-color: hsl(200 100% 45% / 0.8);
+  box-shadow: 0 8px 32px hsl(200 100% 45% / 0.25);
+}
+.pc-card-wrapper.pc-vacant .pc-contact-btn {
+  /* Make the apply button visually aligned with brand */
+  color: hsl(200 100% 45%);
+}
+.pc-card-wrapper.pc-vacant .pc-contact-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(200 100% 45% / 0.8);
+}
+
+/* Ensure vacant avatars render as solid black and are visible */
+.pc-card-wrapper.pc-vacant .pc-avatar-content {
+  mix-blend-mode: normal;
+}
+.pc-card-wrapper.pc-vacant .pc-avatar-content .avatar {
+  filter: brightness(0) contrast(100%);
 }

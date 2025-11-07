@@ -22,7 +22,7 @@ const hero = () => {
         />
       </div>
       <NavBar />
-      <div className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-24">
+      <div id="home" className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-24">
             <AnnouncementPill className="mb-2" />
         <div className="flex items-center justify-center">
           <TextType
