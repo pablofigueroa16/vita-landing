@@ -21,19 +21,39 @@ export default function VitaApp() {
     setMessageStatus(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setMessageStatus(null);
+  // Envío real al backend
 
-    // Simulación de envío
-    setTimeout(() => {
-      setMessageStatus(`¡Mensaje enviado! Gracias por conectar con Vita App, ${formData.nombre}.`);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setMessageStatus(null);
+
+  try {
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.nombre,
+        email: formData.email,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (res.ok && data.success) {
+      setMessageStatus(`✅ ${data.message}`);
       setFormData({ nombre: "", email: "", mensaje: "" });
-      setIsSubmitting(false);
-    }, 1000);
-  };
-  
+    } else {
+      setMessageStatus(`❌ ${data.message || "No se pudo enviar el mensaje"}`);
+    }
+  } catch (error) {
+    console.error("Error enviando el mensaje:", error);
+    setMessageStatus("❌ Error de conexión con el servidor.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
   // Clase base del botón con el estilo Liquid Glass modificado
   const buttonClasses = `
     glass-button w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold
