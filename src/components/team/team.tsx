@@ -40,20 +40,6 @@ const Team = () => {
           enableMobileTilt={false}
         />
 
-
-        <ProfileCard
-          name="Manuel Ramos"
-          title="Software Engineer"
-          handle="menuelramos"
-          status="Online"
-          contactText="Contact Me"
-          avatarUrl="/manuel-removebg-preview.png"
-          iconUrl="/vita-logo-blanco.png"
-          showUserInfo={true}
-          enableTilt={true}
-          enableMobileTilt={false}
-        />
-
         <ProfileCard
           className="pc-vacant"
           name="En búsqueda"
