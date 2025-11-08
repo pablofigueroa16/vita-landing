@@ -1,8 +1,12 @@
 import ProfileCard from "../ProfileCard";
 import ScrollFloat from "../ScrollFloat";
-const team = () => {
+
+const Team = () => {
   return (
-    <div id="team" className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-24">
+    <div
+      id="team"
+      className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-24"
+    >
       <ScrollFloat
         animationDuration={1}
         ease="back.inOut(2)"
@@ -14,12 +18,14 @@ const team = () => {
           DREAM TEAM
         </h1>
       </ScrollFloat>
+
       <h2 className="text-text font-bold text-4xl md:text-5xl">
         En busca de los cofundadores ideales
       </h2>
       <h2 className="text-text-secondary font-bold text-3xl md:text-3xl mb-4">
         Los más grandes están por llegar
       </h2>
+
       <div className="flex flex-row flex-wrap items-center justify-center gap-4">
         <ProfileCard
           name="Victor Corvalan"
@@ -33,6 +39,7 @@ const team = () => {
           enableTilt={true}
           enableMobileTilt={false}
         />
+
         <ProfileCard
           name="Pablo E. Figueroa"
           title="Software Engineer"
@@ -46,6 +53,7 @@ const team = () => {
           enableTilt={true}
           enableMobileTilt={false}
         />
+
         <ProfileCard
           name="Manuel Ramos"
           title="Software Engineer"
@@ -59,7 +67,6 @@ const team = () => {
           enableMobileTilt={false}
         />
 
-        {/* Vacant positions */}
         <ProfileCard
           className="pc-vacant"
           name="En búsqueda"
@@ -133,4 +140,5 @@ const team = () => {
     </div>
   );
 };
-export default team;
+
+export default Team;
