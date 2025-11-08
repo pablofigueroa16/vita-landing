@@ -40,19 +40,6 @@ const Team = () => {
           enableMobileTilt={false}
         />
 
-        <ProfileCard
-          name="Pablo E. Figueroa"
-          title="Software Engineer"
-          handle="pablofigueroa"
-          status="Online"
-          contactText="Contact Me"
-          contactUrl="/https://www.linkedin.com/in/pablofigueroa16/"
-          avatarUrl="/pablo3-removebg-preview10.png"
-          iconUrl="/vita-logo-blanco.png"
-          showUserInfo={true}
-          enableTilt={true}
-          enableMobileTilt={false}
-        />
 
         <ProfileCard
           name="Manuel Ramos"
