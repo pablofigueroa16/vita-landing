@@ -9,6 +9,7 @@ import Team from "@/components/team/team";
 import Contact from "@/components/contact/contact";
 import TextScroll from "@/components/textScroll/textScroll";
 import Timeline from "@/components/timeline/timeline";
+import MobileNavbar from "@/components/mobileNavbar";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <TextScroll />
         <Contact />
         {/* <Footer /> */}
+        <MobileNavbar />;
       </div>
     </div>
   );
