@@ -80,9 +80,9 @@ const Team = () => {
           enableMobileTilt={false}
         />
         <ProfileCard
-          name="Laura"
+          name="Laura Jimenez"
           title="Software Engineer"
-          handle="laura"
+          handle="laurajimenez"
           status="Online"
           contactText="Contact Me"
           avatarUrl="/laura.png"
