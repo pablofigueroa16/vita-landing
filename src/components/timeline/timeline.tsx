@@ -185,7 +185,7 @@ const ScrollTimeline: FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="glass-card p-6 md:p-7 rounded-2xl shadow-xl text-left hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                    className="glass-card bg-card p-6 md:p-7 rounded-2xl shadow-xl border border-primary/40 text-left hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
                     tabIndex={0}
                     role="article"
                   >
@@ -211,7 +211,7 @@ const ScrollTimeline: FC = () => {
 
                 {/* Marcador centrado en la columna de la línea */}
                 <div className="relative flex items-center justify-center" aria-hidden="true">
-                  <span className="w-[18px] h-[18px] rounded-full border border-text bg-bg" />
+                  <span className="w-[18px] h-[18px] rounded-full border border-primary/50 bg-card" />
                 </div>
 
                 {item.side === "right" ? (
@@ -220,7 +220,7 @@ const ScrollTimeline: FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="glass-card p-6 md:p-7 rounded-2xl shadow-xl text-left hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                    className="glass-card bg-card p-6 md:p-7 rounded-2xl shadow-xl border border-primary/40 text-left hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
                     tabIndex={0}
                     role="article"
                   >
