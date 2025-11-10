@@ -7,8 +7,8 @@ import Issues from "@/components/issues/issues";
 import Solution from "@/components/solution/solution";
 import Team from "@/components/team/team";
 import Contact from "@/components/contact/contact";
-import TextScrollMarquee from "@/components/lightswind/text-scroll-marquee";
 import TextScroll from "@/components/textScroll/textScroll";
+import Timeline from "@/components/timeline/timeline";
 
 export default function Home() {
   return (
@@ -19,6 +19,7 @@ export default function Home() {
         <About />
         <Solution />
         <Features />
+        <Timeline />
         <Team />
         <Faq />
         <TextScroll />
