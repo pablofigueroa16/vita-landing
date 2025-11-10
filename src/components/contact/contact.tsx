@@ -170,7 +170,7 @@ export default function VitaApp() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.9 }}
-          className="glass-card p-8 rounded-2xl shadow-xl"
+        className="glass-card bg-card p-8 rounded-2xl shadow-xl border border-primary/40"
         >
           <h3 className="text-2xl font-semibold mb-6 text-center text-brand">
             Envía un mensaje rápido
@@ -186,7 +186,7 @@ export default function VitaApp() {
               value={formData.nombre}
               onChange={handleChange}
               required
-              className="input-field w-full px-4 py-2"
+              className="input-field w-full px-4 py-2 rounded-xl border border-primary/40 bg-primary/20 focus:outline-none focus:ring-2 focus:ring-brand/50"
             />
           </div>
 
@@ -200,7 +200,7 @@ export default function VitaApp() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="input-field w-full px-4 py-2"
+              className="input-field w-full px-4 py-2 rounded-xl border border-primary/40 bg-primary/20 focus:outline-none focus:ring-2 focus:ring-brand/50"
             />
           </div>
 
@@ -214,7 +214,7 @@ export default function VitaApp() {
               onChange={handleChange}
               required
               rows={4}
-              className="input-field w-full px-4 py-2"
+              className="input-field w-full px-4 py-2 rounded-xl border border-primary/40 bg-primary/20 focus:outline-none focus:ring-2 focus:ring-brand/50"
             />
           </div>
 
