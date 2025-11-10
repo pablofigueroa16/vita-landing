@@ -41,8 +41,8 @@ const features = () => {
               <Image
                 src="/features/1.png"
                 alt="Icono Social Feed"
-                width={28}
-                height={28}
+                width={88}
+                height={88}
                 className="w-12 h-12 md:w-16 md:h-16 object-contain"
                 priority={false}
               />
@@ -63,8 +63,8 @@ const features = () => {
               <Image
                 src="/features/2.png"
                 alt="Icono Chat con IA"
-                width={28}
-                height={28}
+                width={88}
+                height={88}
                 className="w-12 h-12 md:w-16 md:h-16 object-contain"
                 priority={false}
               />
@@ -85,8 +85,8 @@ const features = () => {
               <Image
                 src="/features/3.png"
                 alt="Icono CRM Inteligente con IA"
-                width={28}
-                height={28}
+                width={88}
+                height={88}
                 className="w-12 h-12 md:w-16 md:h-16 object-contain"
                 priority={false}
               />
@@ -107,8 +107,8 @@ const features = () => {
               <Image
                 src="/features/4.png"
                 alt="Icono Verificación KYC/KYB"
-                width={28}
-                height={28}
+                width={88}
+                height={88}
                 className="w-12 h-12 md:w-16 md:h-16 object-contain"
                 priority={false}
               />
@@ -129,8 +129,8 @@ const features = () => {
               <Image
                 src="/features/5.png"
                 alt="Icono Tiendas rápidas y sin comisión"
-                width={28}
-                height={28}
+                width={88}
+                height={88}
                 className="w-12 h-12 md:w-16 md:h-16 object-contain"
                 priority={false}
               />
@@ -151,8 +151,8 @@ const features = () => {
               <Image
                 src="/features/6.png"
                 alt="Icono Próximamente más"
-                width={28}
-                height={28}
+                width={88}
+                height={88}
                 className="w-12 h-12 md:w-16 md:h-16 object-contain"
                 priority={false}
               />
