@@ -43,7 +43,7 @@ const Team = () => {
         />
         <ProfileCard
           name="Pablo E. Figueroa"
-          title="Software Engineer"
+          title="Co-Founder & Tech Lead"
           handle="pablofigueroa"
           status="Online"
           contactText="Contact Me"
@@ -55,13 +55,13 @@ const Team = () => {
           enableMobileTilt={false}
         />
         <ProfileCard
-          name="En búsqueda"
-          title="Director de marketing"
-          handle="marketing"
+          name="Claudia Montiel"
+          title="Directora Creativa"
+          handle="claudiamontiel"
           status="Online"
           contactText="Contact Me"
           contactUrl="/careers"
-          avatarUrl="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='24' r='14' fill='%23000000' opacity='0.9'/><path d='M8 58c0-12 10-22 24-22s24 10 24 22' fill='%23000000' opacity='0.6'/></svg>"
+          avatarUrl="/claudia.png"
           iconUrl="/vita-logo-blanco.png"
           showUserInfo={true}
           enableTilt={true}
