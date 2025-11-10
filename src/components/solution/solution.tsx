@@ -1,5 +1,6 @@
 import ScrollFloat from "../ScrollFloat";
 import SpotlightCard from "../SpotlightCard";
+import Image from "next/image";
 const solution = () => {
   return (
     <div
@@ -38,27 +39,16 @@ const solution = () => {
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="relative p-7 md:p-4 text-left">
-            <div className="absolute top-5 left-5 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-brand/80 border border-brand/40 shadow-md flex items-center justify-center">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="#0B1727"
-              >
-                <path
-                  d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"
-                  fill="#ffffff"
-                />
-                <path
-                  d="M9.5 12l2 2 3.5-3.5"
-                  stroke="#0B1727"
-                  strokeWidth="2"
-                  fill="none"
-                />
-              </svg>
-            </div>
-            <h2 className="text-text font-bold text-xl md:text-xl mt-12 mb-2.5 md:mb-3">
+          <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
+            <Image
+                src="/solution/1.png"
+                alt="Icono verificación inteligente"
+                width={88}
+                height={88}
+                className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                priority={false}
+              />
+            <h2 className="text-text font-bold text-xl md:text-xl">
               Verificación inteligente
             </h2>
             <p className="text-text text-sm md:text-base leading-snug md:leading-relaxed">
@@ -75,36 +65,16 @@ const solution = () => {
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="relative p-7 md:p-4 text-left">
-            <div className="absolute top-5 left-5 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-brand/80 border border-brand/40 shadow-md flex items-center justify-center">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="#0B1727"
-              >
-                <rect
-                  x="3"
-                  y="6"
-                  width="18"
-                  height="12"
-                  rx="2"
-                  fill="#ffffff"
-                />
-                <rect
-                  x="3"
-                  y="9"
-                  width="18"
-                  height="3"
-                  fill="#0B1727"
-                  opacity="0.15"
-                />
-                <circle cx="8" cy="13" r="1.2" fill="#0B1727" />
-                <circle cx="12" cy="13" r="1.2" fill="#0B1727" />
-                <circle cx="16" cy="13" r="1.2" fill="#0B1727" />
-              </svg>
-            </div>
-            <h2 className="text-text font-bold text-xl md:text-xl mt-12 mb-2.5 md:mb-3">
+          <div className="flex flex-col items-scenter gap-2 justify-center md:p-4 text-left">
+              <Image
+                src="/solution/2.png"
+                alt="Icono pagos rápidos y globales"
+                width={88}
+                height={88}
+                className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                priority={false}
+              />
+            <h2 className="text-text font-bold text-xl md:text-xl">
               Pagos rápidos y globales
             </h2>
             <p className="text-text text-sm md:text-base leading-snug md:leading-relaxed">
@@ -121,21 +91,16 @@ const solution = () => {
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="relative p-7 md:p-4 text-left">
-            <div className="absolute top-5 left-5 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-brand/80 border border-brand/40 shadow-md flex items-center justify-center">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="#0B1727"
-              >
-                <rect x="3" y="8" width="12" height="8" rx="2" fill="#ffffff" />
-                <path d="M15 10h3l3 3v3h-6v-6z" fill="#ffffff" />
-                <path d="M5 12h8" stroke="#0B1727" strokeWidth="2" />
-                <circle cx="6" cy="14" r="0.8" fill="#0B1727" />
-              </svg>
-            </div>
-            <h2 className="text-text font-bold text-xl md:text-xl mt-12 mb-2.5 md:mb-3">
+          <div className="flex flex-col items-scenter gap-2 justify-center md:p-4 text-left">
+              <Image
+                src="/solution/3.png"
+                alt="Icono envíos integrados y confiables"
+                width={98}
+                height={98}
+                className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                priority={false}
+              />
+            <h2 className="text-text font-bold text-xl md:text-xl">
               Envíos integrados y confiables
             </h2>
             <p className="text-text text-sm md:text-base leading-snug md:leading-relaxed">

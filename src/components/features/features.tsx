@@ -1,5 +1,6 @@
 import ScrollFloat from "../ScrollFloat";
 import SpotlightCard from "../SpotlightCard";
+import Image from "next/image";
 const features = () => {
   return (
     <div
@@ -36,23 +37,16 @@ const features = () => {
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="relative p-7 md:p-4 text-left">
-            <div className="absolute top-5 left-5 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-brand/80 border border-brand/40 shadow-md flex items-center justify-center">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="#0B1727"
-              >
-                <path
-                  d="M7 9c0-1 .7-1.8 1.6-2 .1-.3.4-.7.8-.9.5-.3 1.1-.2 1.5.2.4-.2.9-.1 1.2.2.3.3.4.8.3 1.2.4.1.7.4.9.8.2.5.1 1.1-.3 1.5-.3.3-.8.4-1.2.3-.1.4-.4.7-.8.9-.5.2-1.1.1-1.5-.3-.4.2-.9.1-1.2-.2-.3-.3-.4-.8-.3-1.3z"
-                  fill="#ffffff"
-                />
-                <circle cx="15.5" cy="7.5" r="1.6" fill="#ffffff" />
-                <circle cx="18.5" cy="10.5" r="1.2" fill="#ffffff" />
-              </svg>
-            </div>
-            <h2 className="text-text font-bold text-xl md:text-xl mt-12 mb-2.5 md:mb-3">
+          <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
+              <Image
+                src="/features/1.png"
+                alt="Icono Social Feed"
+                width={28}
+                height={28}
+                className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                priority={false}
+              />
+            <h2 className="text-text font-bold text-xl md:text-xl">
               Social Feed
             </h2>
             <p className="text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
@@ -65,24 +59,16 @@ const features = () => {
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="relative p-7 md:p-4 text-left">
-            <div className="absolute top-5 left-5 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-brand/80 border border-brand/40 shadow-md flex items-center justify-center">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="#0B1727"
-              >
-                <path
-                  d="M4 5h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H10l-4 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"
-                  fill="#ffffff"
-                />
-                <circle cx="8" cy="10" r="1" fill="#0B1727" />
-                <circle cx="12" cy="10" r="1" fill="#0B1727" />
-                <circle cx="16" cy="10" r="1" fill="#0B1727" />
-              </svg>
-            </div>
-            <h2 className="text-text font-bold text-xl md:text-xl mt-12 mb-2.5 md:mb-3">
+          <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
+              <Image
+                src="/features/2.png"
+                alt="Icono Chat con IA"
+                width={28}
+                height={28}
+                className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                priority={false}
+              />
+            <h2 className="text-text font-bold text-xl">
               Chat con IA
             </h2>
             <p className="text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
@@ -95,27 +81,16 @@ const features = () => {
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="relative p-7 md:p-4 text-left">
-            <div className="absolute top-5 left-5 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-brand/80 border border-brand/40 shadow-md flex items-center justify-center">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="#0B1727"
-              >
-                <rect
-                  x="4"
-                  y="5"
-                  width="16"
-                  height="12"
-                  rx="2"
-                  fill="#ffffff"
-                />
-                <path d="M7 9h10M7 12h6" stroke="#0B1727" strokeWidth="2" />
-                <circle cx="17" cy="12" r="1.5" fill="#0B1727" />
-              </svg>
-            </div>
-            <h2 className="text-text font-bold text-xl md:text-xl mt-12 mb-2.5 md:mb-3">
+          <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
+              <Image
+                src="/features/3.png"
+                alt="Icono CRM Inteligente con IA"
+                width={28}
+                height={28}
+                className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                priority={false}
+              />
+            <h2 className="text-text font-bold text-xl">
               CRM Inteligente con IA
             </h2>
             <p className="text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
@@ -128,27 +103,16 @@ const features = () => {
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="relative p-7 md:p-4 text-left">
-            <div className="absolute top-5 left-5 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-brand/80 border border-brand/40 shadow-md flex items-center justify-center">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="#0B1727"
-              >
-                <path
-                  d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"
-                  fill="#ffffff"
-                />
-                <path
-                  d="M9.5 12l2 2 3.5-3.5"
-                  stroke="#0B1727"
-                  strokeWidth="2"
-                  fill="none"
-                />
-              </svg>
-            </div>
-            <h2 className="text-text font-bold text-xl md:text-xl mt-12 mb-2.5 md:mb-3">
+          <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
+              <Image
+                src="/features/4.png"
+                alt="Icono Verificación KYC/KYB"
+                width={28}
+                height={28}
+                className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                priority={false}
+              />
+            <h2 className="text-text font-bold text-xl">
               Verificación KYC / KYB Potenciada con IA
             </h2>
             <p className="text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
@@ -161,19 +125,16 @@ const features = () => {
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="relative p-7 md:p-4 text-left">
-            <div className="absolute top-5 left-5 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-brand/80 border border-brand/40 shadow-md flex items-center justify-center">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="#0B1727"
-              >
-                <path d="M4 8h16l-2-3H6l-2 3z" fill="#ffffff" />
-                <rect x="5" y="9" width="14" height="8" rx="2" fill="#ffffff" />
-              </svg>
-            </div>
-            <h2 className="text-text font-bold text-xl md:text-xl mt-12 mb-2.5 md:mb-3">
+          <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
+              <Image
+                src="/features/5.png"
+                alt="Icono Tiendas rápidas y sin comisión"
+                width={28}
+                height={28}
+                className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                priority={false}
+              />
+            <h2 className="text-text font-bold text-xl">
               Tiendas Rápidas y Sin Comisión
             </h2>
             <p className="text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
@@ -186,21 +147,16 @@ const features = () => {
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="relative p-7 md:p-4 text-left">
-            <div className="absolute top-5 left-5 w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-brand/80 border border-brand/40 shadow-md flex items-center justify-center">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className="w-6 h-6 md:w-7 md:h-7"
-                fill="#0B1727"
-              >
-                <path
-                  d="M12 2l2 4 4 2-4 2-2 4-2-4-4-2 4-2 2-4z"
-                  fill="#ffffff"
-                />
-              </svg>
-            </div>
-            <h2 className="text-text font-bold text-xl md:text-xl mt-12 mb-2.5 md:mb-3">
+          <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
+              <Image
+                src="/features/6.png"
+                alt="Icono Próximamente más"
+                width={28}
+                height={28}
+                className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                priority={false}
+              />
+            <h2 className="text-text font-bold text-xl">
               Próximamente más
             </h2>
             <p className="text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">

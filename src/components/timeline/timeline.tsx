@@ -1,6 +1,6 @@
 "use client";
-import { FC, useEffect, useMemo, useRef, useState } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { FC, useMemo, useRef, useState, useLayoutEffect } from "react";
+import { motion, useScroll, useSpring, useTransform, useMotionValueEvent } from "framer-motion";
 import ScrollFloat from "../ScrollFloat";
 
 type TimelineItem = {
@@ -78,29 +78,49 @@ const CalendarIcon: FC<{ className?: string }> = ({ className }) => (
 
 const ScrollTimeline: FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
 
+  // Referencia del track (línea vertical) y límites seguros
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const DOT_SIZE = 14;
+  const SAFE_MARGIN = Math.round(DOT_SIZE / 2) + 6;
   const [trackH, setTrackH] = useState(0);
-  useEffect(() => {
-    const measure = () =>
-      setTrackH(
-        containerRef.current?.getBoundingClientRect().height ||
-          window.innerHeight
-      );
+
+  // Medición robusta de la altura del track
+  useLayoutEffect(() => {
+    const measure = () => {
+      const el = trackRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      setTrackH(Math.max(0, Math.round(rect.height)));
+    };
     measure();
+    const ro = new ResizeObserver(measure);
+    if (trackRef.current) ro.observe(trackRef.current);
     window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+    return () => {
+      window.removeEventListener("resize", measure);
+      ro.disconnect();
+    };
   }, []);
 
-  const yRaw = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, Math.max(0, trackH - 80)]
-  );
+  // Transformación con clamp y validación en cada actualización
+  const yRaw = useTransform(scrollYProgress, (p) => {
+    const clamp = (n: number, min: number, max: number) => Math.min(Math.max(n, min), max);
+    const progress = clamp(p, 0, 1);
+    const minY = SAFE_MARGIN;
+    const maxY = Math.max(SAFE_MARGIN, trackH - DOT_SIZE - SAFE_MARGIN);
+    const yVal = progress * (maxY - minY) + minY;
+    return clamp(yVal, minY, maxY);
+  });
   const y = useSpring(yRaw, { stiffness: 140, damping: 22 });
+
+  const [inBounds, setInBounds] = useState(true);
+  useMotionValueEvent(y, "change", (val) => {
+    const minY = SAFE_MARGIN;
+    const maxY = Math.max(SAFE_MARGIN, trackH - DOT_SIZE - SAFE_MARGIN);
+    setInBounds(val >= minY && val <= maxY);
+  });
 
   const header = useMemo(
     () => ({
@@ -136,18 +156,19 @@ const ScrollTimeline: FC = () => {
         </p>
       </div>
 
-      <div className="relative mx-auto" style={{ maxWidth: 992 }}>
+      <div ref={trackRef} className="relative mx-auto" style={{ maxWidth: 992 }}>
         <div
           className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-[2px] bg-text-secondary/40"
           aria-hidden="true"
         />
         <motion.div
           style={{ y }}
-          className="absolute left-1/2 -translate-x-1/2 w-[14px] h-[14px] rounded-full bg-brand"
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-[14px] h-[14px] rounded-full bg-brand pointer-events-none"
           aria-hidden="true"
         >
           <span className="absolute inset-0 m-auto w-[14px] h-[14px] rounded-full shadow-[0_0_24px_hsl(200_100%_45%/0.9)]" />
         </motion.div>
+        <span className="sr-only">Timeline {inBounds ? "dentro de límites" : "fuera de límites"}</span>
 
         <div className="flex flex-col gap-14">
           {items.map((item) => (
