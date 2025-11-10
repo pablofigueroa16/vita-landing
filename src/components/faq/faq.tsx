@@ -56,7 +56,11 @@ const Button = ({
     : primaryClasses;
 
   return (
-    <button onClick={onClick} disabled={disabled} className={finalClasses + " " + className}>
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={finalClasses + " " + className}
+    >
       {children}
     </button>
   );
@@ -94,21 +98,35 @@ const faqData = [
 // ---------------- FAQ ITEM ----------------
 const FaqItem = ({ question, answer, isOpen, onClick }: any) => (
   <motion.div
+    id="faq"
     initial={false}
     // Animación de color de fondo al abrir/cerrar
-    animate={{ backgroundColor: isOpen ? "rgba(32,54,68,0.35)" : "transparent" }}
+    animate={{
+      backgroundColor: isOpen ? "rgba(32,54,68,0.35)" : "transparent",
+    }}
     transition={{ duration: 0.3 }}
     onClick={onClick}
     className="cursor-pointer rounded-xl border-b border-gray-700 last:border-b-0"
   >
     <div className="flex justify-between items-center py-4">
       {/* Usamos blue-500 como color de 'brand' para que se vea la diferencia */}
-      <h4 className={`text-md font-medium ${isOpen ? "text-gray-100" : "text-gray-300"}`}>
+      <h4
+        className={`text-md font-medium ${
+          isOpen ? "text-gray-100" : "text-gray-300"
+        }`}
+      >
         {question}
       </h4>
 
-      <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
-        {isOpen ? <Minus className="w-5 h-5 text-blue-500" /> : <Plus className="w-5 h-5 text-gray-300" />}
+      <motion.div
+        animate={{ rotate: isOpen ? 180 : 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        {isOpen ? (
+          <Minus className="w-5 h-5 text-blue-500" />
+        ) : (
+          <Plus className="w-5 h-5 text-gray-300" />
+        )}
       </motion.div>
     </div>
 
@@ -130,21 +148,24 @@ export default function SeccionFAQ() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [questionInput, setQuestionInput] = useState("");
 
-  const toggleFaq = (index: number) => setOpenIndex(openIndex === index ? null : index);
+  const toggleFaq = (index: number) =>
+    setOpenIndex(openIndex === index ? null : index);
 
   // Función de envío a WhatsApp
   const handleSendWhatsApp = () => {
     // Número de WhatsApp (debe incluir el código de país, p. ej., 57 para Colombia)
-    const numeroWhatsApp = "971543034346"; 
-    
+    const numeroWhatsApp = "971543034346";
+
     if (!questionInput.trim()) {
-        console.warn("La pregunta está vacía. Abortando envío.");
-        return;
+      console.warn("La pregunta está vacía. Abortando envío.");
+      return;
     }
-    
-    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(questionInput)}`;
+
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
+      questionInput
+    )}`;
     window.open(url, "_blank");
-    
+
     // Opcional: Cerrar modal y limpiar input después de enviar
     setIsModalOpen(false);
     setQuestionInput("");
@@ -152,14 +173,30 @@ export default function SeccionFAQ() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-gray-900 text-gray-100">
-      
       {/* Fondo estético (opcional) */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" className="absolute top-0 left-0 w-full h-full">
+        <svg
+          viewBox="0 0 1000 1000"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute top-0 left-0 w-full h-full"
+        >
           <defs>
-            <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-              <stop offset="0%" style={{stopColor:"#1f2937", stopOpacity:0.5}} />
-              <stop offset="100%" style={{stopColor:"#111827", stopOpacity:0}} />
+            <radialGradient
+              id="grad1"
+              cx="50%"
+              cy="50%"
+              r="50%"
+              fx="50%"
+              fy="50%"
+            >
+              <stop
+                offset="0%"
+                style={{ stopColor: "#1f2937", stopOpacity: 0.5 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "#111827", stopOpacity: 0 }}
+              />
             </radialGradient>
           </defs>
           <rect width="100%" height="100%" fill="url(#grad1)" />
@@ -167,11 +204,10 @@ export default function SeccionFAQ() {
       </div>
 
       <section className="relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-12 items-start">
-        
         {/* Columna de Título y Botón */}
         <div>
           {/* Usamos blue-500 como 'brand' */}
-          <p className="text-sm uppercase tracking-widest mb-2 font-medium text-blue-500">
+          <p className="text-sm uppercase tracking-widest mb-2 font-medium text-brand">
             Preguntas frecuentes
           </p>
 
@@ -204,30 +240,32 @@ export default function SeccionFAQ() {
 
       {/* Modal de Contacto por WhatsApp */}
       {isModalOpen && (
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }} // Usamos exit para framer-motion si el componente se desmonta
           className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
         >
-          <motion.div 
-            initial={{ scale: 0.9, opacity: 0 }} 
-            animate={{ scale: 1, opacity: 1 }} 
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             className="relative w-full max-w-md rounded-xl p-6 bg-gray-900/80 backdrop-blur-xl border border-gray-700"
           >
-
-            <button 
-              className="absolute right-4 top-4 text-gray-300 hover:text-white transition-colors" 
+            <button
+              className="absolute right-4 top-4 text-gray-300 hover:text-white transition-colors"
               onClick={() => setIsModalOpen(false)}
               aria-label="Cerrar modal"
             >
               <X className="w-6 h-6" />
             </button>
 
-            <h3 className="text-2xl font-bold mb-4 text-white">Haz tu pregunta</h3>
+            <h3 className="text-2xl font-bold mb-4 text-white">
+              Haz tu pregunta
+            </h3>
             <p className="text-sm text-gray-400 mb-4">
-                Escribe tu pregunta y te redirigiremos a WhatsApp para contactar a nuestro equipo.
+              Escribe tu pregunta y te redirigiremos a WhatsApp para contactar a
+              nuestro equipo.
             </p>
 
             <textarea
@@ -238,7 +276,12 @@ export default function SeccionFAQ() {
               placeholder="Escribe aquí tu duda..."
             />
 
-            <Button onClick={handleSendWhatsApp} disabled={!questionInput.trim()} isWhatsapp className="mt-5">
+            <Button
+              onClick={handleSendWhatsApp}
+              disabled={!questionInput.trim()}
+              isWhatsapp
+              className="mt-5"
+            >
               <Send className="w-5 h-5 mr-2" />
               Enviar por WhatsApp
             </Button>

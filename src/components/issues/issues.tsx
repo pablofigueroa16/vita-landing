@@ -9,14 +9,23 @@ const issues = () => {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
-        containerClassName="text-brand font-bold text-4xl md:text-4xl"
+        // containerClassName="text-brand font-bold text-xl md:text-base"
+        textClassName="text-brand font-bold text-4xl md:text-xl"
       >
         EL PROBLEMA
       </ScrollFloat>
-      <h2 className="text-text font-bold text-4xl md:text-5xl">
+      <ScrollFloat
+        animationDuration={1}
+        ease="back.inOut(2)"
+        scrollStart="center bottom+=50%"
+        scrollEnd="bottom bottom-=40%"
+        stagger={0.03}
+        // containerClassName="text-brand font-bold text-xl md:text-base"
+        textClassName="text-text mx-[10%] font-bold text-4xl md:text-5xl"
+      >
         Tu problema no es vender… es todo lo que pasa antes y después de una
         venta.
-      </h2>
+      </ScrollFloat>
       <h3 className="text-text-secondary p-4 font-bold mx-10 text-xl md:text-2xl">
         El 55 % de las tiendas online en Latinoamérica pierden dinero por algo
         que no ven: fricción. Pagos que fallan, usuarios falsos y envíos lentos
@@ -85,7 +94,7 @@ const issues = () => {
       <h2 className="text-text p-4 font-bold text-4xl md:text-3xl">
         La fricción mata la conversión.
       </h2>
-      <p className="text-text-secondary mx-4 font-bold text-xl md:text-base">
+      <p className="text-text-secondary mx-[10%] mx-4 font-bold text-xl md:text-base">
         Cada segundo perdido, cada pago rechazado y cada entrega tardía le
         cuesta vida a tu marca. Por eso nacimos para eliminar lo que más frena a
         los negocios digitales: pagos lentos, desconfianza y logística rota.

@@ -19,6 +19,7 @@ const about = () => {
         enableBlur={true}
         baseRotation={5}
         blurStrength={10}
+        textClassName="mx-[10%]"
       >
         Las soluciones de comercio digital impulsadas por Inteligencia
         Artificial están transformando la manera en que las personas venden,
@@ -109,6 +110,7 @@ const about = () => {
         enableBlur={true}
         baseRotation={5}
         blurStrength={10}
+        textClassName="mx-[10%] text-sm text-slate-300"
       >
         VITA no solo es tecnología. Es propósito, seguridad y oportunidad. Un
         espacio donde cada vendedor, creador y comprador puede construir algo

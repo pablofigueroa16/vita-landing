@@ -1,5 +1,6 @@
 import ProfileCard from "../ProfileCard";
 import ScrollFloat from "../ScrollFloat";
+import TextScrollMarquee from "../lightswind/text-scroll-marquee";
 
 const Team = () => {
   return (
@@ -7,6 +8,7 @@ const Team = () => {
       id="team"
       className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-24"
     >
+      
       <ScrollFloat
         animationDuration={1}
         ease="back.inOut(2)"
@@ -39,7 +41,6 @@ const Team = () => {
           enableTilt={true}
           enableMobileTilt={false}
         />
-
         <ProfileCard
           name="Pablo E. Figueroa"
           title="Software Engineer"
@@ -53,7 +54,19 @@ const Team = () => {
           enableTilt={true}
           enableMobileTilt={false}
         />
-
+        <ProfileCard
+          name="En búsqueda"
+          title="Director de marketing"
+          handle="marketing"
+          status="Online"
+          contactText="Contact Me"
+          contactUrl="/careers"
+          avatarUrl="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='24' r='14' fill='%23000000' opacity='0.9'/><path d='M8 58c0-12 10-22 24-22s24 10 24 22' fill='%23000000' opacity='0.6'/></svg>"
+          iconUrl="/vita-logo-blanco.png"
+          showUserInfo={true}
+          enableTilt={true}
+          enableMobileTilt={false}
+        />
         <ProfileCard
           name="Manuel Ramos"
           title="Software Engineer"
@@ -66,67 +79,24 @@ const Team = () => {
           enableTilt={true}
           enableMobileTilt={false}
         />
+        <ProfileCard
+          name="Laura"
+          title="Software Engineer"
+          handle="laura"
+          status="Online"
+          contactText="Contact Me"
+          avatarUrl="/laura.png"
+          iconUrl="/vita-logo-blanco.png"
+          showUserInfo={true}
+          enableTilt={true}
+          enableMobileTilt={false}
+        />
 
         <ProfileCard
           className="pc-vacant"
           name="En búsqueda"
           title="Director de marketing"
-          status="Vacante"
-          contactText="Aplicar"
-          contactUrl="/careers"
-          avatarUrl="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='24' r='14' fill='%23000000' opacity='0.9'/><path d='M8 58c0-12 10-22 24-22s24 10 24 22' fill='%23000000' opacity='0.6'/></svg>"
-          iconUrl="/vita-logo-blanco.png"
-          showUserInfo={true}
-          enableTilt={true}
-          enableMobileTilt={false}
-        />
-
-        <ProfileCard
-          className="pc-vacant"
-          name="En búsqueda"
-          title="Cofundador de negocios"
-          status="Vacante"
-          contactText="Aplicar"
-          contactUrl="/careers"
-          avatarUrl="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='24' r='14' fill='%23000000' opacity='0.9'/><path d='M8 58c0-12 10-22 24-22s24 10 24 22' fill='%23000000' opacity='0.6'/></svg>"
-          iconUrl="/vita-logo-blanco.png"
-          showUserInfo={true}
-          enableTilt={true}
-          enableMobileTilt={false}
-        />
-
-        <ProfileCard
-          className="pc-vacant"
-          name="En búsqueda"
-          title="Community manager"
-          status="Vacante"
-          contactText="Aplicar"
-          contactUrl="/careers"
-          avatarUrl="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='24' r='14' fill='%23000000' opacity='0.9'/><path d='M8 58c0-12 10-22 24-22s24 10 24 22' fill='%23000000' opacity='0.6'/></svg>"
-          iconUrl="/vita-logo-blanco.png"
-          showUserInfo={true}
-          enableTilt={true}
-          enableMobileTilt={false}
-        />
-
-        <ProfileCard
-          className="pc-vacant"
-          name="En búsqueda"
-          title="Diseñadora gráfica"
-          status="Vacante"
-          contactText="Aplicar"
-          contactUrl="/careers"
-          avatarUrl="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='24' r='14' fill='%23000000' opacity='0.9'/><path d='M8 58c0-12 10-22 24-22s24 10 24 22' fill='%23000000' opacity='0.6'/></svg>"
-          iconUrl="/vita-logo-blanco.png"
-          showUserInfo={true}
-          enableTilt={true}
-          enableMobileTilt={false}
-        />
-
-        <ProfileCard
-          className="pc-vacant"
-          name="En búsqueda"
-          title="Diseñador de videos"
+          handle="marketing"
           status="Vacante"
           contactText="Aplicar"
           contactUrl="/careers"
