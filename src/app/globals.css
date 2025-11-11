@@ -12,6 +12,7 @@
   --color-text-secondary: hsl(0 0% 70%);
 }
 
+
 /* Utilidades de estilo coherentes con el navbar */
 .glass-card {
   border-radius: 1rem; /* equivalente a rounded-2xl */
