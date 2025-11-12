@@ -141,3 +141,18 @@
   outline: none;
   box-shadow: 0 0 0 2px hsl(200 100% 45% / 0.8);
 }
+@keyframes pulse-smooth {
+  0% {
+    box-shadow: 0 0 16px rgba(77, 124, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 34px rgba(77, 124, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(77, 124, 255, 0.4);
+  }
+}
+
+.animate-pulse-smooth {
+  animation: pulse-smooth 2.4s ease-in-out infinite;
+}
