@@ -95,49 +95,62 @@ const faqData = [
   },
 ];
 
-// ---------------- FAQ ITEM ----------------
+// ---------------- FAQ ITEM - Ahora es una tarjeta individual ----------------
 const FaqItem = ({ question, answer, isOpen, onClick }: any) => (
   <motion.div
-    id="faq"
-    initial={false}
-    // Animación de color de fondo al abrir/cerrar
-    animate={{
-      backgroundColor: isOpen ? "rgba(32,54,68,0.35)" : "transparent",
-    }}
-    transition={{ duration: 0.3 }}
-    onClick={onClick}
-    className="cursor-pointer rounded-xl border-b border-gray-700 last:border-b-0"
+    initial={{ opacity: 0, y: 10 }} // Animación de entrada
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    // Contenedor de la Tarjeta Flotante (ScrollFloat Card Style)
+    className="w-full"
   >
-    <div className="flex justify-between items-center py-4">
-      {/* Usamos blue-500 como color de 'brand' para que se vea la diferencia */}
-      <h4
-        className={`text-md font-medium ${
-          isOpen ? "text-gray-100" : "text-gray-300"
-        }`}
-      >
-        {question}
-      </h4>
-
-      <motion.div
-        animate={{ rotate: isOpen ? 180 : 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        {isOpen ? (
-          <Minus className="w-5 h-5 text-blue-500" />
-        ) : (
-          <Plus className="w-5 h-5 text-gray-300" />
-        )}
-      </motion.div>
-    </div>
-
     <motion.div
       initial={false}
-      // Animación de altura y opacidad para el contenido de la respuesta
-      animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-      transition={{ duration: 0.4 }}
-      className="overflow-hidden"
+      // Animación de color de fondo al abrir/cerrar
+      animate={{
+        // Cambio de color al estar abierto para un mejor feedback visual
+        backgroundColor: isOpen ? "rgba(40,50,60,0.5)" : "rgba(23,30,40,0.5)",
+      }}
+      transition={{ duration: 0.3 }}
+      onClick={onClick}
+      className={`
+        cursor-pointer rounded-xl p-4 transition-all duration-300 
+        border border-gray-700/50 backdrop-blur-md 
+        shadow-lg shadow-gray-900/30
+        ${isOpen ? 'ring-2 ring-blue-500/50' : 'hover:border-gray-600/70'}
+      `}
     >
-      <p className="text-sm p-2 leading-relaxed text-gray-300 pb-4">{answer}</p>
+      
+      <div className="flex justify-between items-center py-1">
+        <h4
+          className={`text-md font-medium transition-colors ${
+            isOpen ? "text-blue-400" : "text-gray-100" // Texto principal azul al abrir
+          }`}
+        >
+          {question}
+        </h4>
+
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {isOpen ? (
+            <Minus className="w-5 h-5 text-blue-500" />
+          ) : (
+            <Plus className="w-5 h-5 text-gray-400" />
+          )}
+        </motion.div>
+      </div>
+
+      <motion.div
+        initial={false}
+        // Animación de altura y opacidad para el contenido de la respuesta
+        animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.4 }}
+        className="overflow-hidden"
+      >
+        <p className="text-sm pt-3 leading-relaxed text-gray-300">{answer}</p>
+      </motion.div>
     </motion.div>
   </motion.div>
 );
@@ -204,10 +217,10 @@ export default function SeccionFAQ() {
       </div>
 
       <section className="relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-12 items-start">
-        {/* Columna de Título y Botón */}
+        {/* Columna de Título y Botón (IZQUIERDA) */}
         <div>
           {/* Usamos blue-500 como 'brand' */}
-          <p className="text-sm uppercase tracking-widest mb-2 font-medium text-brand">
+          <p className="text-sm uppercase tracking-widest mb-2 font-medium text-blue-500">
             Preguntas frecuentes
           </p>
 
@@ -224,8 +237,8 @@ export default function SeccionFAQ() {
           </Button>
         </div>
 
-        {/* Columna de FAQ */}
-        <div className="rounded-2xl border border-gray-700/50 p-4 bg-gray-800/30 backdrop-blur-md">
+        {/* Columna de FAQ (DERECHA) - Cada FaqItem es ahora una tarjeta individual */}
+        <div className="space-y-4">
           {faqData.map((item, index) => (
             <FaqItem
               key={index}
