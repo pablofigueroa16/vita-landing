@@ -1,6 +1,5 @@
 import ProfileCard from "../ProfileCard";
 import ScrollFloat from "../ScrollFloat";
-import TextScrollMarquee from "../lightswind/text-scroll-marquee";
 
 const Team = () => {
   return (
@@ -91,7 +90,6 @@ const Team = () => {
           enableTilt={true}
           enableMobileTilt={false}
         />
-
         <ProfileCard
           className="pc-vacant"
           name="En búsqueda"
