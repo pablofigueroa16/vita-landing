@@ -1,6 +1,5 @@
 import ProfileCard from "../ProfileCard";
 import ScrollFloat from "../ScrollFloat";
-import TextScrollMarquee from "../lightswind/text-scroll-marquee";
 
 const Team = () => {
   return (
