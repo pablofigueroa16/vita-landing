@@ -127,7 +127,7 @@ export default function NavBar() {
       ref={navRef}
       aria-label="Navegación principal"
       className={cn(
-        "fixed top-8 left-1/2 -translate-x-1/2 w-3/4 h-16 z-50",
+        "md:block hidden fixed top-8 left-1/2 -translate-x-1/2 w-3/4 h-16 z-50",
         "rounded-2xl border border-primary/30",
         "bg-primary/35",
         "bg-gradient-to-r from-primary/25 via-card/15 to-primary/25",
