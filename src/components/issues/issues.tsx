@@ -3,19 +3,23 @@ import SpotlightCard from "../SpotlightCard";
 import Image from "next/image";
 const issues = () => {
   return (
-    <div id="issues" className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-24">
+    <div id="issues" className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center px-6 text-center pt-24">
       <ScrollFloat
         animationDuration={1}
         ease="back.inOut(2)"
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
-        textClassName="text-text mx-[10%] font-bold text-3xl md:text-4xl"
+        textClassName="text-brand font-bold text-sm md:text-base"
       >
+        La Realidad
+      </ScrollFloat>
+      {/* Título principal */}
+      <h2 className="mx-[10%] text-text text-center font-bold text-2xl md:text-3xl lg:text-4xl leading-snug md:leading-tight mb-4">
         Tu problema no es vender… es todo lo que pasa antes y después de una
         venta.
-      </ScrollFloat>
-      <h3 className="text-text-secondary mx-[10%] p-4 font-semibold mx-10 text-xl md:text-2xl">
+      </h2>
+      <h3 className="text-text-secondary mx-[10%] p-4 font-semibold mx-[10%] text-xl md:text-xl mb-6">
         El 55 % de las tiendas online en Latinoamérica pierden dinero por algo
         que no ven: fricción. Pagos que fallan, usuarios falsos y envíos lentos
         que apagan la confianza y matan la recompra.
@@ -25,14 +29,15 @@ const issues = () => {
         <SpotlightCard>
           <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
             {/* Icono personalizado arriba-izquierda (reemplazado por imagen optimizada) */}
-              <Image
-                src="/issues/1.png"
-                alt="Icono pagos que frenan tu crecimiento"
-                width={28}
-                height={28}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
+            <Image
+              src="/issues/1.png"
+              alt="Icono pagos que frenan tu crecimiento"
+              width={64}
+              height={64}
+              quality={100}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+              priority={true}
+            />
             <h3 className="text-text font-bold text-2xl md:text-2xl">
               Pagos que frenan tu crecimiento
             </h3>
@@ -50,14 +55,15 @@ const issues = () => {
         {/* Card 2: Confianza */}
         <SpotlightCard>
           <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
-              <Image
-                src="/issues/2.png"
-                alt="Icono falta de confianza y usuarios falsos"
-                width={28}
-                height={28}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
+            <Image
+              src="/issues/2.png"
+              alt="Icono falta de confianza y usuarios falsos"
+              width={64}
+              height={64}
+              quality={100}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+              priority={true}
+            />
             <h3 className="text-text font-bold text-2xl md:text-2xl">
               Falta de confianza y usuarios falsos
             </h3>
@@ -74,14 +80,15 @@ const issues = () => {
         {/* Card 3: Envíos */}
         <SpotlightCard>
           <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
-              <Image
-                src="/issues/3.png"
-                alt="Icono envíos lentos, promesas rotas"
-                width={28}
-                height={28}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
+            <Image
+              src="/issues/3.png"
+              alt="Icono envíos lentos, promesas rotas"
+              width={64}
+              height={64}
+              quality={100}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+              priority={true}
+            />
             <h3 className="text-text font-bold text-2xl md:text-2xl">
               Envíos lentos, promesas rotas
             </h3>
