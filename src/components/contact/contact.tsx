@@ -106,15 +106,6 @@ export default function VitaApp() {
               <p className="text-lg text-text">+971543034346</p>
             </div>
 
-            <div>
-              <p className="text-xl font-semibold mb-1 text-brand flex items-center gap-2">
-                <MapPin className="w-5 h-5" /> Dirección:
-              </p>
-              <p className="text-lg text-text">
-                Vita Wellness Center, Av. Bienestar 123, Ciudad Digital
-              </p>
-            </div>
-
             {/* Redes Sociales - Actualizadas con Framer Motion */}
             <div className="pt-4">
               <p className="text-xl font-semibold mb-4 text-brand">Síguenos:</p>
