@@ -10,45 +10,97 @@ interface NavItem {
   id: string;
 }
 
-export default function NavBar() {
-  const items: NavItem[] = [
-    { label: "Inicio", id: "home" },
-    { label: "Solución", id: "solution" },
-    { label: "Equipo", id: "team" },
-    { label: "Preguntas", id: "faq" },
-    { label: "Contacto", id: "contact" },
-  ];
+const NAV_ITEMS: NavItem[] = [
+  { label: "Inicio", id: "home" },
+  { label: "Solución", id: "solution" },
+  { label: "Equipo", id: "team" },
+  { label: "Preguntas", id: "faq" },
+  { label: "Contacto", id: "contact" },
+];
 
-  const [activeSection, setActiveSection] = useState<string>("home");
+export default function NavBar() {
+  const [activeSection, setActiveSection] = useState<string>(NAV_ITEMS[0].id);
+  const [mounted, setMounted] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+
+  // Asegurar que el componente está montado en el cliente
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const smoothScrollTo = (targetY: number, duration = 600) => {
+    const startY = window.scrollY;
+    const distance = targetY - startY;
+    if (distance === 0) return;
+
+    let startTime: number | null = null;
+
+    const easeInOut = (t: number) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+    const animationStep = (currentTime: number) => {
+      if (startTime === null) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeInOut(progress);
+
+      window.scrollTo({
+        top: startY + distance * easedProgress,
+        behavior: "auto",
+      });
+
+      if (progress < 1) requestAnimationFrame(animationStep);
+    };
+
+    requestAnimationFrame(animationStep);
+  };
 
   // Scroll suave al hacer clic
   const handleNavigate = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
 
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    const navbarHeight = navRef.current?.offsetHeight ?? 0;
+    const padding = 32;
+    const targetPosition =
+      el.getBoundingClientRect().top + window.scrollY - (navbarHeight + padding);
+
+    smoothScrollTo(targetPosition);
   };
 
   // Detectar la sección visible
   useEffect(() => {
-    const sectionEls = items
-      .map((i) => document.getElementById(i.id))
-      .filter(Boolean) as HTMLElement[];
+    if (!mounted) return;
+
+    const sectionEls = NAV_ITEMS.map((item) =>
+      document.getElementById(item.id)
+    ).filter((el): el is HTMLElement => Boolean(el));
+
+    if (!sectionEls.length) return;
+
+    const navbarHeight = navRef.current?.offsetHeight ?? 0;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (!visible.length) return;
+
+        const nextSection = visible[0].target.id;
+        setActiveSection((prev) => (prev === nextSection ? prev : nextSection));
       },
-      { threshold: 0.5 }
+      {
+        rootMargin: `-${navbarHeight + 20}px 0px -55% 0px`,
+        threshold: [0.1, 0.35, 0.55],
+      }
     );
 
     sectionEls.forEach((sec) => observer.observe(sec));
 
     return () => observer.disconnect();
-  }, [items]);
+  }, [mounted]);
 
   return (
     <nav
@@ -67,8 +119,10 @@ export default function NavBar() {
         {/* ⭐ LOGO CON ANIMACIÓN + CLICK PARA VOLVER AL INICIO */}
         <button
           onClick={() => handleNavigate("home")}
-          className="inline-flex items-center gap-3 transition-all duration-300 
-                     hover:scale-105 hover:brightness-110 active:scale-95"
+          className={cn(
+            "inline-flex items-center gap-3 transition-all duration-300",
+            "hover:scale-105 hover:brightness-110 active:scale-95"
+          )}
           aria-label="Ir al inicio"
         >
           <Image
@@ -86,8 +140,8 @@ export default function NavBar() {
           className="flex justify-end items-center h-full m-0 px-3 gap-7 list-none"
           role="list"
         >
-          {items.map((item) => {
-            const isActive = activeSection === item.id;
+          {NAV_ITEMS.map((item) => {
+            const isActive = mounted && activeSection === item.id;
 
             return (
               <li key={item.id} role="listitem">
