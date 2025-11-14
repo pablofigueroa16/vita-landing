@@ -2,31 +2,28 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { HelpCircle, UserRound } from "lucide-react"; // ← 👈 iconos agregados
 
-type NavItem = { id: string; label: string; ariaLabel: string };
+type NavItem = { id: string; label: string; ariaLabel: string; isIcon?: boolean };
 
 export default function NavBar() {
   const navRef = useRef<HTMLElement | null>(null);
   const [activeSection, setActiveSection] = useState<string>("home");
+
   const items: NavItem[] = useMemo(
     () => [
       { id: "home", label: "Inicio", ariaLabel: "Home" },
-      { id: "issues", label: "Problema", ariaLabel: "Problema" },
-      { id: "about", label: "Acerca de", ariaLabel: "Acerca de" },
       { id: "solution", label: "Solución", ariaLabel: "Solución" },
-      {
-        id: "features",
-        label: "Funcionalidades",
-        ariaLabel: "Funcionalidades",
-      },
       { id: "team", label: "Equipo", ariaLabel: "Equipo" },
-      { id: "faq", label: "Preguntas", ariaLabel: "Preguntas" },
-      { id: "contact", label: "Contacto", ariaLabel: "Contacto" },
+      // Icono para Preguntas
+      { id: "faq", label: "Preguntas", ariaLabel: "Preguntas frecuentes", isIcon: true },
+      // Icono para Contacto
+      { id: "contact", label: "Contacto", ariaLabel: "Contacto", isIcon: true },
     ],
     []
   );
 
-  // Smooth scroll animado 500ms con offset de navbar
+  // Smooth scroll animado
   const smoothScrollTo = (targetY: number, duration = 500) => {
     const startY = window.scrollY;
     const deltaY = targetY - startY;
@@ -48,13 +45,13 @@ export default function NavBar() {
     const el = document.getElementById(id);
     if (!el) return;
     const nav = navRef.current;
-    const offset = (nav?.getBoundingClientRect().height ?? 0) + 16; // margen superior de seguridad
+    const offset = (nav?.getBoundingClientRect().height ?? 0) + 16;
     const rect = el.getBoundingClientRect();
     const targetY = window.scrollY + rect.top - offset;
     smoothScrollTo(targetY, 500);
   };
 
-  // IntersectionObserver para resaltar activo (umbral 50%)
+  // IntersectionObserver
   useEffect(() => {
     const sections = items
       .map((i) => document.getElementById(i.id))
@@ -63,7 +60,6 @@ export default function NavBar() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // Seleccionar la entrada con mayor intersección >= 0.5
         let bestId = activeSection;
         let bestRatio = 0;
         for (const e of entries) {
@@ -82,14 +78,10 @@ export default function NavBar() {
     );
 
     sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, [items, activeSection]);
 
-    return () => {
-      observer.disconnect();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [items]);
-
-  // Debounced scroll y resize como respaldo; evita cálculos repetidos
+  // Scroll y resize backup
   useEffect(() => {
     let timeout: number | undefined;
     const onScrollOrResize = () => {
@@ -119,7 +111,6 @@ export default function NavBar() {
       window.removeEventListener("resize", onScrollOrResize);
       if (timeout) window.clearTimeout(timeout);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items, activeSection]);
 
   return (
@@ -131,9 +122,7 @@ export default function NavBar() {
         "rounded-2xl border border-primary/30",
         "bg-primary/35",
         "bg-gradient-to-r from-primary/25 via-card/15 to-primary/25",
-        "backdrop-blur-md",
-        "shadow-xl",
-        "transition-all"
+        "backdrop-blur-md shadow-xl transition-all"
       )}
       role="navigation"
     >
@@ -165,10 +154,8 @@ export default function NavBar() {
                   type="button"
                   className={cn(
                     "group inline-flex items-center justify-center",
-                    "min-w-[48px] px-3.5 h-12 rounded-full",
-                    "border-0 bg-transparent cursor-pointer",
-                    "transition-all",
-                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                    "min-w-[48px] px-3.5 h-12 rounded-full border-0 bg-transparent cursor-pointer",
+                    "transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
                   )}
                   aria-label={item.ariaLabel}
                   aria-controls={item.id}
@@ -181,17 +168,38 @@ export default function NavBar() {
                     }
                   }}
                 >
-                  <span
-                    className={cn(
-                      "text-base leading-none ",
-                      isActive
-                        ? "font-semibold text-brand"
-                        : "text-text-secondary",
-                      "transition-colors  group-active:text-brand"
-                    )}
-                  >
-                    {item.label}
-                  </span>
+                  {/* 👇 Aquí se renderiza el texto o icono */}
+                  {item.isIcon ? (
+                    item.id === "faq" ? (
+                      <HelpCircle
+                        size={22}
+                        className={cn(
+                          isActive ? "text-brand" : "text-text-secondary",
+                          "transition-colors group-active:text-brand"
+                        )}
+                      />
+                    ) : (
+                      <UserRound
+                        size={22}
+                        className={cn(
+                          isActive ? "text-brand" : "text-text-secondary",
+                          "transition-colors group-active:text-brand"
+                        )}
+                      />
+                    )
+                  ) : (
+                    <span
+                      className={cn(
+                        "text-base leading-none",
+                        isActive
+                          ? "font-semibold text-brand"
+                          : "text-text-secondary",
+                        "transition-colors group-active:text-brand"
+                      )}
+                    >
+                      {item.label}
+                    </span>
+                  )}
                 </button>
               </li>
             );
