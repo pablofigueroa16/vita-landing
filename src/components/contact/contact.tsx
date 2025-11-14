@@ -106,8 +106,6 @@ export default function VitaApp() {
               <p className="text-lg text-text">+971543034346</p>
             </div>
 
-           
-
             {/* Redes Sociales - Actualizadas con Framer Motion */}
             <div className="pt-4">
               <p className="text-xl font-semibold mb-4 text-brand">Síguenos:</p>
