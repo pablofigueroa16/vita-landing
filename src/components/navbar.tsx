@@ -56,7 +56,7 @@ export default function NavBar() {
       aria-label="Navegación principal"
       className={cn(
         "md:block hidden fixed top-8 left-1/2 -translate-x-1/2",
-        "w-[55%] h-16 z-50 rounded-2xl border border-primary/30",
+        "w-1/2 h-16 z-50 rounded-2xl border border-primary/30",
         "bg-primary/35 bg-gradient-to-r from-primary/25 via-card/15 to-primary/25",
         "backdrop-blur-md shadow-xl transition-all"
       )}
@@ -64,20 +64,19 @@ export default function NavBar() {
     >
       <div className="flex items-center justify-between h-full px-4">
 
-        {/* ⭐ LOGO MÁS GRANDE + HOVER ANIMADO + CLICK AL INICIO */}
+        {/* ⭐ LOGO CON ANIMACIÓN + CLICK PARA VOLVER AL INICIO */}
         <button
           onClick={() => handleNavigate("home")}
           className="inline-flex items-center gap-3 transition-all duration-300 
-                     hover:scale-110 hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.6)] 
-                     active:scale-95 cursor-pointer"
+                     hover:scale-105 hover:brightness-110 active:scale-95"
           aria-label="Ir al inicio"
         >
           <Image
             src="/vita-logo-blanco.png"
             alt="Logo de VITA"
-            width={85}
-            height={85}
-            className="w-[85px] h-[85px]"
+            width={72}
+            height={72}
+            className="w-[72px] h-[72px] drop-shadow-lg"
             priority
           />
         </button>
