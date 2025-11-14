@@ -34,7 +34,7 @@ const issues = () => {
               alt="Icono pagos que frenan tu crecimiento"
               width={64}
               height={64}
-              quality={100}
+              quality={75}
               className="w-12 h-12 md:w-16 md:h-16 object-contain"
               priority={true}
             />
@@ -60,7 +60,7 @@ const issues = () => {
               alt="Icono falta de confianza y usuarios falsos"
               width={64}
               height={64}
-              quality={100}
+              quality={75}
               className="w-12 h-12 md:w-16 md:h-16 object-contain"
               priority={true}
             />
@@ -85,7 +85,7 @@ const issues = () => {
               alt="Icono envíos lentos, promesas rotas"
               width={64}
               height={64}
-              quality={100}
+              quality={75}
               className="w-12 h-12 md:w-16 md:h-16 object-contain"
               priority={true}
             />

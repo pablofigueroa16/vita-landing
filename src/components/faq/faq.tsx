@@ -52,8 +52,8 @@ const Button = ({
   const finalClasses = isGlass
     ? glassClasses
     : isWhatsapp
-    ? whatsappClasses
-    : primaryClasses;
+      ? whatsappClasses
+      : primaryClasses;
 
   return (
     <button
@@ -98,6 +98,7 @@ const faqData = [
 // ---------------- FAQ ITEM - Ahora es una tarjeta individual ----------------
 const FaqItem = ({ question, answer, isOpen, onClick }: any) => (
   <motion.div
+    id="faq"
     initial={{ opacity: 0, y: 10 }} // Animación de entrada
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
@@ -120,12 +121,11 @@ const FaqItem = ({ question, answer, isOpen, onClick }: any) => (
         ${isOpen ? 'ring-2 ring-blue-500/50' : 'hover:border-gray-600/70'}
       `}
     >
-      
+
       <div className="flex justify-between items-center py-1">
         <h4
-          className={`text-md font-medium transition-colors ${
-            isOpen ? "text-blue-400" : "text-gray-100" // Texto principal azul al abrir
-          }`}
+          className={`text-md font-medium transition-colors ${isOpen ? "text-blue-400" : "text-gray-100" // Texto principal azul al abrir
+            }`}
         >
           {question}
         </h4>
