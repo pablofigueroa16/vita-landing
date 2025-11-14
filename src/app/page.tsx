@@ -3,6 +3,7 @@ import Faq from "@/components/faq/faq";
 import Features from "@/components/features/features";
 // import Footer from "@/components/footer/footer";
 import Hero from "@/components/hero/hero";
+import LogosMarquee from "@/components/logosMarquee/logosMarquee";
 import Issues from "@/components/issues/issues";
 import Solution from "@/components/solution/solution";
 import Team from "@/components/team/team";
@@ -15,6 +16,7 @@ export default function Home() {
     <div className="relative min-h-screen w-full">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <Hero />
+        <LogosMarquee />
         <Issues />
         <About />
         <Solution />

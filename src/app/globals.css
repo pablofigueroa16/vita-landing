@@ -11,3 +11,21 @@
   --color-text: hsl(0 0% 95%);
   --color-text-secondary: hsl(0 0% 70%);
 }
+
+.marquee-track {
+  min-width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track[data-paused="true"] {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
