@@ -72,7 +72,7 @@ const Team = () => {
           handle="menuelramos"
           status="Online"
           contactText="Contact Me"
-          avatarUrl="/manuel-removebg-preview.png"
+          avatarUrl="/manuel1-removebg-preview.png"
           iconUrl="/vita-logo-blanco.png"
           showUserInfo={true}
           enableTilt={true}

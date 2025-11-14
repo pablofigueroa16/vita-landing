@@ -5,7 +5,7 @@ const textScroll = () => {
     <TextScrollMarquee
       baseVelocity={5}
       direction="left"
-      className="text-4xl font-bold uppercase text-text"
+      className="text-5xl font-bold uppercase text-text"
       scrollDependent={false}
       delay={500}
     >
