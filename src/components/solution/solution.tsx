@@ -14,7 +14,7 @@ const solution = () => {
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
         containerClassName="text-brand font-bold"
-        textClassName="text-4xl md:text-xl"
+        textClassName="text-brand font-bold text-sm md:text-base"
       >
         LA SOLUCIÓN
       </ScrollFloat>

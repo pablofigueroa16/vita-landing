@@ -19,7 +19,7 @@ const issues = () => {
         Tu problema no es vender… es todo lo que pasa antes y después de una
         venta.
       </h2>
-      <h3 className="text-text-secondary mx-[10%] p-4 font-semibold mx-[10%] text-xl md:text-xl mb-6">
+      <h3 className="text-text-secondary mx-[10%] p-4 font-semibold mx-[10%] text-xl md:text-base mb-6">
         El 55 % de las tiendas online en Latinoamérica pierden dinero por algo
         que no ven: fricción. Pagos que fallan, usuarios falsos y envíos lentos
         que apagan la confianza y matan la recompra.
