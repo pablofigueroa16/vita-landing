@@ -18,9 +18,29 @@ const about = () => {
       </ScrollFloat>
 
       {/* Subtítulo descriptivo */}
-      <h2 className="text-text text-left font-medium text-2xl md:text-3xl lg:text-4xl leading-snug md:leading-tight mb-8">
-        VITA impulsa el comercio digital con IA, automatización inteligente, verificación de identidad y pagos globales, creando un e-commerce más rápido, seguro, confiable y humano.
-      </h2>
+    
+<h2 className="text-text text-left font-medium text-2xl md:text-3xl lg:text-4xl leading-snug md:leading-tight mb-8">
+  <span className="text-text">
+    VITA impulsa el comercio digital con IA,
+  </span>{" "}
+
+  {/* ✨ TEXTO SOLO CON EFECTO PULSE */}
+  <span
+    className="
+      text-text-secondary
+      animate-[pulse_3s_ease-in-out_infinite]
+    "
+  >
+    automatización inteligente, verificación de identidad y pagos globales,
+  </span>{" "}
+
+  <span className="text-text">
+    creando un e-commerce más rápido, seguro, confiable y humano.
+  </span>
+</h2>
+
+
+
 
       {/* Botón */}
       <Button variant="primary">Aprender más</Button>

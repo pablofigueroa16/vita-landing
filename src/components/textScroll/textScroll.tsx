@@ -1,11 +1,12 @@
 import TextScrollMarquee from "../lightswind/text-scroll-marquee";
 
-const textScroll = () => {
+const TextScroll = () => {
   return (
     <TextScrollMarquee
       baseVelocity={5}
       direction="left"
-      className="text-5xl font-bold uppercase text-text"
+      className="text-8xl font-extrabold uppercase text-text tracking-wide
+                 animate-[pulse_3s_ease-in-out_infinite]"
       scrollDependent={false}
       delay={500}
     >
@@ -13,4 +14,5 @@ const textScroll = () => {
     </TextScrollMarquee>
   );
 };
-export default textScroll;
+
+export default TextScroll;
