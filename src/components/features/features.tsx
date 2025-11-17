@@ -5,7 +5,7 @@ const features = () => {
   return (
     <div
       id="features"
-      className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-20"
+      className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center"
     >
       <ScrollFloat
         animationDuration={1}
