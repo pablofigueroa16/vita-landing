@@ -234,9 +234,9 @@ const solution = () => {
                 dark={1}
                 scale={1.2}
                 diffuse={1.5}
-                baseColor="#1a1a1a"
+                baseColor="#0099e6"
                 markerColor="#ff0000"
-                glowColor="#444444"
+                glowColor="#0e212f"
               />
             </div>
           </div>

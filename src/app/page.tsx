@@ -6,11 +6,12 @@ import LogosMarquee from "@/components/logosMarquee/logosMarquee";
 import DashboardPreview from "@/components/dashboardPreview/dashboardPreview";
 import Issues from "@/components/issues/issues";
 import Solution from "@/components/solution/solution";
+import Showcase from "@/components/showcase/showcase";
+import { showcaseCards } from "@/components/showcase/showcaseData";
 import Team from "@/components/team/team";
 import Contact from "@/components/contact/contact";
 import TextScroll from "@/components/textScroll/textScroll";
 import Timeline from "@/components/timeline/timeline";
-// import Footer from "@/components/footer/footer";
 
 export default function Home() {
   return (
@@ -22,13 +23,13 @@ export default function Home() {
         <Issues />
         <About />
         <Solution />
+        <Showcase cards={showcaseCards} />
         <Features />
         <Timeline />
         <Team />
         <Faq />
         <TextScroll />
         <Contact />
-        {/* <Footer /> */}
       </div>
     </div>
   );
