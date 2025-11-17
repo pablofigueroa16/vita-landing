@@ -1,7 +1,7 @@
 import About from "@/components/about/about";
 import Faq from "@/components/faq/faq";
 import Features from "@/components/features/features";
-// import Footer from "@/components/footer/footer";
+import Footer from "@/components/footer/footer";
 import Hero from "@/components/hero/hero";
 import LogosMarquee from "@/components/logosMarquee/logosMarquee";
 import Issues from "@/components/issues/issues";
@@ -26,7 +26,7 @@ export default function Home() {
         <Faq />
         <TextScroll />
         <Contact />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );

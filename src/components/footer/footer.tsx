@@ -1,18 +1,20 @@
-import ScrollFloat from "../ScrollFloat";
+import { File, Search, Settings } from "lucide-react"
+import { OrbitingCircles } from "@/components/ui/orbiting-circles"
+
 const footer = () => {
   return (
-    <div className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-24">
-      <ScrollFloat
-        animationDuration={1}
-        ease="back.inOut(2)"
-        scrollStart="center bottom+=50%"
-        scrollEnd="bottom bottom-=40%"
-        stagger={0.03}
-        containerClassName="text-text font-bold text-4xl md:text-7xl"
-      >
-        Footer
-      </ScrollFloat>
-      <p>manuel</p>
+    <div className="text-text relative h-[500px] w-full overflow-hidden">
+      <OrbitingCircles>
+        <File />
+        <Settings />
+        <File />
+      </OrbitingCircles>
+      <OrbitingCircles radius={100} reverse>
+        <File />
+        <Settings />
+        <File />
+        <Search />
+      </OrbitingCircles>
     </div>
   );
 }
