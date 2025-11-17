@@ -182,11 +182,6 @@ const Showcase: React.FC<ShowcaseProps> = ({
                       {card.icon && (
                         <div 
                           className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                          style={{
-                            backgroundColor: "hsl(200 100% 45% / 0.15)",
-                            borderColor: "hsl(200 100% 45% / 0.3)",
-                            border: "1px solid",
-                          }}
                         >
                           {card.icon}
                         </div>

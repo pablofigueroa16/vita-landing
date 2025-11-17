@@ -151,7 +151,7 @@ const ScrollTimeline: FC = () => {
         <h2 className="mx-[10%] py-4 text-4xl md:text-5xl font-extrabold tracking-tight text-text">
           {header.title}
         </h2>
-        <p className="text-sm md:text-base text-text-secondary my-4 text-center mx-[10%]">
+        <p className="text-sm md:text-base font-semibold text-text-secondary my-4 text-center mx-[10%]">
           {header.subtitle}
         </p>
       </div>

@@ -1,4 +1,3 @@
-import Button from "../Button";
 import ScrollFloat from "../ScrollFloat";
 import SpotlightCard from "../SpotlightCard";
 import Image from "next/image";
@@ -8,48 +7,28 @@ import Globe from "@/components/lightswind/globe";
 const orbitIcons = [
   {
     angle: 0,
-    svg: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 3 5 6v5c0 5 3.5 8.5 7 10 3.5-1.5 7-5 7-10V6l-7-3z" />
-      </svg>
-    ),
+    image: "/iconos/visa.png",
+    alt: "Visa",
   },
   {
     angle: 72,
-    svg: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
+    image: "/iconos/stripe.png",
+    alt: "Stripe",
   },
   {
     angle: 144,
-    svg: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="8" />
-        <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" />
-      </svg>
-    ),
+    image: "/iconos/bitcoin.png",
+    alt: "Bitcoin",
   },
   {
     angle: 216,
-    svg: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="2" y="6" width="20" height="12" rx="2" />
-        <path d="M2 10h20M7 15h2" />
-      </svg>
-    ),
+    image: "/iconos/usdt.png",
+    alt: "USDT",
   },
   {
     angle: 288,
-    svg: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M3 12h13l4 4v-4h1" />
-        <path d="M5 12v5h8" />
-        <circle cx="7" cy="17" r="2" />
-        <circle cx="15" cy="17" r="2" />
-      </svg>
-    ),
+    image: "/iconos/cregis.png",
+    alt: "Cregis",
   },
 ];
 
@@ -81,7 +60,7 @@ const solution = () => {
       >
         Una experiencia de comercio sin fricción, más rápida y más humana.
       </ScrollFloat>
-      <p className="text-text-secondary mx-[10%] font-bold text-2xl md:text-2xl mb-4">
+      <p className="text-text-secondary mx-[10%] font-semibold text-xl md:text-base mb-4">
         VITA reinventa el e-commerce eliminando la falta de confianza, los pagos
         lentos y la logística ineficiente, haciendo que vender y comprar sea
         simple y fluido.
@@ -115,12 +94,11 @@ const solution = () => {
                 biometría en segundos, garantizando usuarios legítimos y
                 reduciendo fraudes y contracargos hasta en un 70 %.
               </p>
-              <Button variant="primary">Aprender más</Button>
             </div>
             <div className="hidden md:block w-px self-stretch bg-brand/40" aria-hidden="true" />
             <div className="flex-1 flex items-center justify-center">
               <Image
-                src="/didit-video.gif"
+                src="/didit.gif"
                 alt="Flujo de verificación Didit"
                 width={360}
                 height={760}
@@ -158,7 +136,6 @@ const solution = () => {
                 instantáneos a tu wallet o tarjeta Mastercard. Cobra sin fronteras
                 con tecnología que optimiza tasas y aprobaciones.
               </p>
-              <Button variant="primary">Aprender más</Button>
             </div>
             <div className="hidden md:block h-px w-full bg-brand/30" aria-hidden="true" />
             <div className="flex-1 flex items-center justify-center p-4 md:p-6">
@@ -174,12 +151,19 @@ const solution = () => {
                   {orbitIcons.map((icon) => (
                     <div
                       key={icon.angle}
-                      className="absolute top-1/2 left-1/2 w-10 h-10 rounded-full bg-brand/30 backdrop-blur-sm border border-white/20 flex items-center justify-center -translate-x-1/2 -translate-y-1/2"
+                      className="absolute top-1/2 left-1/2 w-12 h-12 rounded-full flex items-center justify-center -translate-x-1/2 -translate-y-1/2"
                       style={{
                         transform: `rotate(${icon.angle}deg) translateY(calc(var(--orbit-radius) * -1)) rotate(-${icon.angle}deg)`,
                       }}
                     >
-                      {icon.svg}
+                      <Image
+                        src={icon.image}
+                        alt={icon.alt}
+                        width={24}
+                        height={24}
+                        className="w-full h-full object-contain"
+                        priority={false}
+                      />
                     </div>
                   ))}
                 </div>
@@ -221,11 +205,10 @@ const solution = () => {
                 Entrega más rápido. Gana más confianza.
               </p>
               <p className="mx-2 text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
-                Gracias a nuestra integración con Cubbo, tus pedidos se gestionan
+                Gracias a nuestras integraciones, tus pedidos se gestionan
                 y envían automáticamente con seguimiento en tiempo real, entregas
                 rápidas y devoluciones simples que impulsan la recompra.
               </p>
-              <Button variant="primary">Aprender más</Button>
             </div>
             <div className="hidden md:block h-px w-full bg-brand/30" aria-hidden="true" />
             <div className="flex-1 p-4">
