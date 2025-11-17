@@ -149,7 +149,7 @@ export default function NavBar() {
                   onClick={() => handleNavigate(item.id)}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
-                    "relative px-2 py-1 text-base transition-all duration-300",
+                    "relative cursor-pointer px-2 py-1 text-base transition-all duration-300",
                     "hover:text-brand/80 focus:outline-none",
                     isActive
                       ? "font-semibold text-brand"

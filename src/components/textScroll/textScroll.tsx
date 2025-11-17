@@ -3,9 +3,9 @@ import TextScrollMarquee from "../lightswind/text-scroll-marquee";
 const textScroll = () => {
   return (
     <TextScrollMarquee
-      baseVelocity={5}
+      baseVelocity={3}
       direction="left"
-      className="uppercase text-text text-8xl font-extrabold uppercase text-text"
+      className="text-8xl font-extrabold uppercase text-text"
       scrollDependent={false}
       delay={500}
     >

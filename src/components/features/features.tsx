@@ -13,9 +13,9 @@ const features = () => {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
-        textClassName="text-xl md:text-xl text-brand font-bold"
+        textClassName="text-brand font-semibold text-sm md:text-base"
       >
-        FUNCIONALIDADES
+        Funcionalidades
       </ScrollFloat>
       <ScrollFloat
         animationDuration={1}

@@ -58,7 +58,7 @@ export default function VitaApp() {
         {/* LADO IZQUIERDO */}
         <div className="p-8 md:p-0">
           <motion.p
-            className="text-sm uppercase tracking-widest text-brand mb-2"
+            className="text-sm font-semibold text-brand mb-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
