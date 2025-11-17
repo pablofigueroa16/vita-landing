@@ -6,7 +6,6 @@ import SpotlightCard from "../SpotlightCard";
 const about = () => {
   return (
     <div id="about" className="relative min-h-screen w-full z-10 flex flex-col items-start justify-center px-6 text-center pt-24">
-      {/* Título principal */}
       <ScrollFloat
         animationDuration={1}
         ease="back.inOut(2)"
@@ -18,7 +17,6 @@ const about = () => {
         Sobre Nosotros
       </ScrollFloat>
 
-      {/* Subtítulo descriptivo */}
       <h2 className="text-text text-left font-medium text-2xl md:text-3xl lg:text-4xl leading-snug md:leading-tight mb-8">
         <ShinyText
           text="VITA impulsa el comercio digital con IA"
@@ -35,10 +33,8 @@ const about = () => {
         />
       </h2>
 
-      {/* Botón */}
-      <Button variant="primary">Aprender más</Button>
+      <Button variant="primary">Regístrate gratis</Button>
 
-      {/* Tarjetas principales */}
       <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-9 mt-8">
         {/* Card 1: IA */}
         <SpotlightCard>

@@ -5,7 +5,7 @@ const features = () => {
   return (
     <div
       id="features"
-      className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center"
+      className="relative min-h-screen mt-20 w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center"
     >
       <ScrollFloat
         animationDuration={1}
@@ -17,18 +17,10 @@ const features = () => {
       >
         Funcionalidades
       </ScrollFloat>
-      <ScrollFloat
-        animationDuration={1}
-        ease="back.inOut(2)"
-        scrollStart="center bottom+=50%"
-        scrollEnd="bottom bottom-=40%"
-        stagger={0.03}
-        textClassName="mx-[10%] text-xl md:text-5xl text-text font-bold"
-      >
+      <h2 className="mx-[10%] text-xl md:text-5xl text-text font-bold">
         Herramientas inteligentes para impulsar tu crecimiento digital
-      </ScrollFloat>
-
-      <h3 className="text-text-secondary mx-[10%] p-1 font-semibold text-lg md:text-xl">
+      </h2>
+      <h3 className="text-text-secondary mx-[10%] p-1 font-semibold text-xl md:text-base">
         VITA reúne todo lo que necesitas para vender, conectar y escalar de
         forma segura, intuitiva y sin fricción.
       </h3>
@@ -38,14 +30,14 @@ const features = () => {
           spotlightColor="hsl(200 100% 45%)"
         >
           <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
-              <Image
-                src="/features/1.png"
-                alt="Icono Social Feed"
-                width={88}
-                height={88}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
+            <Image
+              src="/features/1.png"
+              alt="Icono Social Feed"
+              width={88}
+              height={88}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+              priority={false}
+            />
             <h2 className="text-text font-bold text-xl md:text-xl">
               Social Feed
             </h2>
@@ -60,14 +52,14 @@ const features = () => {
           spotlightColor="hsl(200 100% 45%)"
         >
           <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
-              <Image
-                src="/features/2.png"
-                alt="Icono Chat con IA"
-                width={88}
-                height={88}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
+            <Image
+              src="/features/2.png"
+              alt="Icono Chat con IA"
+              width={88}
+              height={88}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+              priority={false}
+            />
             <h2 className="text-text font-bold text-xl">
               Chat con IA
             </h2>
@@ -82,14 +74,14 @@ const features = () => {
           spotlightColor="hsl(200 100% 45%)"
         >
           <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
-              <Image
-                src="/features/3.png"
-                alt="Icono CRM Inteligente con IA"
-                width={88}
-                height={88}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
+            <Image
+              src="/features/3.png"
+              alt="Icono CRM Inteligente con IA"
+              width={88}
+              height={88}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+              priority={false}
+            />
             <h2 className="text-text font-bold text-xl">
               CRM Inteligente con IA
             </h2>
@@ -104,14 +96,14 @@ const features = () => {
           spotlightColor="hsl(200 100% 45%)"
         >
           <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
-              <Image
-                src="/features/4.png"
-                alt="Icono Verificación KYC/KYB"
-                width={88}
-                height={88}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
+            <Image
+              src="/features/4.png"
+              alt="Icono Verificación KYC/KYB"
+              width={88}
+              height={88}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+              priority={false}
+            />
             <h2 className="text-text font-bold text-xl">
               Verificación KYC / KYB Potenciada con IA
             </h2>
@@ -126,14 +118,14 @@ const features = () => {
           spotlightColor="hsl(200 100% 45%)"
         >
           <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
-              <Image
-                src="/features/5.png"
-                alt="Icono Tiendas rápidas y sin comisión"
-                width={88}
-                height={88}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
+            <Image
+              src="/features/5.png"
+              alt="Icono Tiendas rápidas y sin comisión"
+              width={88}
+              height={88}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+              priority={false}
+            />
             <h2 className="text-text font-bold text-xl">
               Tiendas Rápidas y Sin Comisión
             </h2>
@@ -148,14 +140,14 @@ const features = () => {
           spotlightColor="hsl(200 100% 45%)"
         >
           <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
-              <Image
-                src="/features/6.png"
-                alt="Icono Próximamente más"
-                width={88}
-                height={88}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
+            <Image
+              src="/features/6.png"
+              alt="Icono Próximamente más"
+              width={88}
+              height={88}
+              className="w-12 h-12 md:w-16 md:h-16 object-contain"
+              priority={false}
+            />
             <h2 className="text-text font-bold text-xl">
               Próximamente más
             </h2>

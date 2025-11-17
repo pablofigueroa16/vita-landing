@@ -22,7 +22,7 @@ const Team = () => {
       <h2 className="text-text font-bold text-4xl md:text-5xl">
         En busca de los cofundadores ideales
       </h2>
-      <h2 className="text-text-secondary font-bold text-3xl md:text-3xl mb-4">
+      <h2 className="text-text-secondary font-semibold text-xl md:text-base mb-4">
         Los más grandes están por llegar
       </h2>
 
@@ -41,7 +41,7 @@ const Team = () => {
         />
         <ProfileCard
           name="Pablo E. Figueroa"
-          title="Co-Founder & Tech Lead"
+          title="CTO & Tech Lead"
           handle="pablofigueroa"
           status="Online"
           contactText="Contact Me"
@@ -54,7 +54,7 @@ const Team = () => {
         />
         <ProfileCard
           name="Claudia Montiel"
-          title="Directora Creativa"
+          title="Co-Founder & CCO"
           handle="claudiamontiel"
           status="Online"
           contactText="Contact Me"
@@ -67,7 +67,7 @@ const Team = () => {
         />
         <ProfileCard
           name="Manuel Ramos"
-          title="Software Engineer"
+          title="Co-Founder & Software Engineer"
           handle="menuelramos"
           status="Online"
           contactText="Contact Me"
@@ -79,7 +79,7 @@ const Team = () => {
         />
         <ProfileCard
           name="Laura Jimenez"
-          title="Software Engineer"
+          title="Co-Founder & Software Engineer"
           handle="laurajimenez"
           status="Online"
           contactText="Contact Me"
@@ -92,8 +92,8 @@ const Team = () => {
         <ProfileCard
           className="pc-vacant"
           name="En búsqueda"
-          title="Director de marketing"
-          handle="marketing"
+          title="Todas las vacantes"
+          handle="Vita"
           status="Vacante"
           contactText="Aplicar"
           contactUrl="/careers"

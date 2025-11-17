@@ -21,11 +21,11 @@ export default function Home() {
         <LogosMarquee />
         <DashboardPreview />
         <Issues />
-        <About />
-        <Solution />
         <Showcase cards={showcaseCards} />
+        <Solution />
         <Features />
         <Timeline />
+        <About />
         <Team />
         <Faq />
         <TextScroll />
