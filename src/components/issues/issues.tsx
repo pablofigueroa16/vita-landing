@@ -1,6 +1,7 @@
 import ScrollFloat from "@/components/ScrollFloat";
 import SpotlightCard from "../SpotlightCard";
 import Image from "next/image";
+import ShinyText from "../ShinyText";
 const issues = () => {
   return (
     <div id="issues" className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center px-6 text-center pt-24">
@@ -10,16 +11,21 @@ const issues = () => {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
-        textClassName="text-brand font-bold text-sm md:text-base"
+        textClassName="text-brand font-semibold text-sm md:text-base"
       >
         La Realidad
       </ScrollFloat>
-      {/* Título principal */}
-      <h2 className="mx-[10%] text-text text-center font-bold text-2xl md:text-3xl lg:text-4xl leading-snug md:leading-tight mb-4">
-        Tu problema no es vender… es todo lo que pasa antes y después de una
-        venta.
+
+      <h2 className="mx-[10%] text-text text-center font-bold text-2xl md:text-3xl lg:text-5xl leading-snug md:leading-tight mb-4">
+        La venta te da dinero.
       </h2>
-      <h3 className="text-text-secondary mx-[10%] p-4 font-semibold mx-[10%] text-xl md:text-xl mb-6">
+      <ShinyText
+        text="El desorden te lo quita."
+        disabled={false}
+        speed={2}
+        className="text-text font-bolt text-lg sm:text-xl md:text-5xl"
+      />
+      <h3 className="text-text-secondary p-4 font-semibold mx-[10%] text-xl md:text-base mb-6">
         El 55 % de las tiendas online en Latinoamérica pierden dinero por algo
         que no ven: fricción. Pagos que fallan, usuarios falsos y envíos lentos
         que apagan la confianza y matan la recompra.

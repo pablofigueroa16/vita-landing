@@ -14,7 +14,7 @@ const solution = () => {
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
         containerClassName="text-brand font-bold"
-        textClassName="text-4xl md:text-xl"
+        textClassName="text-brand font-bold text-sm md:text-base"
       >
         LA SOLUCIÓN
       </ScrollFloat>
@@ -114,11 +114,6 @@ const solution = () => {
           </div>
         </SpotlightCard>
       </div>
-      <h2 className="text-text-secondary font-bold mx-[10%] text-xl md:text-xl mt-12 mb-2.5 md:mb-3">
-        El comercio digital no necesita ser complicado. Con verificación, pagos
-        y envíos integrados, VITA convierte la confianza en crecimiento y la
-        tecnología en resultados.
-      </h2>
     </div>
   );
 };

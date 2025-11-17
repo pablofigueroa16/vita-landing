@@ -1,5 +1,6 @@
 import Button from "../Button";
 import ScrollFloat from "../ScrollFloat";
+import ShinyText from "../ShinyText";
 import SpotlightCard from "../SpotlightCard";
 
 const about = () => {
@@ -12,14 +13,26 @@ const about = () => {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
-        textClassName="text-brand font-bold text-sm md:text-base"
+        textClassName="text-brand font-semibold text-sm md:text-base"
       >
         Sobre Nosotros
       </ScrollFloat>
 
       {/* Subtítulo descriptivo */}
       <h2 className="text-text text-left font-medium text-2xl md:text-3xl lg:text-4xl leading-snug md:leading-tight mb-8">
-        VITA impulsa el comercio digital con IA, automatización inteligente, verificación de identidad y pagos globales, creando un e-commerce más rápido, seguro, confiable y humano.
+        <ShinyText
+          text="VITA impulsa el comercio digital con IA"
+          disabled={false}
+          speed={2}
+          className="text-text font-semibold text-lg sm:text-xl md:text-4xl"
+        />
+        , automatización inteligente, verificación de identidad y pagos globales, 
+        <ShinyText
+          text="creando un e-commerce más rápido, seguro, confiable y humano."
+          disabled={false}
+          speed={2}
+          className="text-text font-semibold text-lg sm:text-xl md:text-4xl"
+        />
       </h2>
 
       {/* Botón */}
