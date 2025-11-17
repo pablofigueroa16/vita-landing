@@ -220,7 +220,7 @@ export default function SeccionFAQ() {
         {/* Columna de Título y Botón (IZQUIERDA) */}
         <div>
           {/* Usamos blue-500 como 'brand' */}
-          <p className="text-sm uppercase tracking-widest mb-2 font-medium text-blue-500">
+          <p className="text-sm mb-2 font-semibold text-brand">
             Preguntas frecuentes
           </p>
 

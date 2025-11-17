@@ -144,9 +144,9 @@ const ScrollTimeline: FC = () => {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
-        textClassName="text-brand font-bold text-4xl md:text-xl"
+        textClassName="text-brand font-semibold text-sm md:text-base"
       >
-        TIMELINE
+        Timeline
       </ScrollFloat>
         <h2 className="mx-[10%] py-4 text-4xl md:text-5xl font-extrabold tracking-tight text-text">
           {header.title}

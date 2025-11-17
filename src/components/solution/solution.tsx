@@ -1,6 +1,58 @@
+import Button from "../Button";
 import ScrollFloat from "../ScrollFloat";
 import SpotlightCard from "../SpotlightCard";
 import Image from "next/image";
+import type { CSSProperties } from "react";
+import Globe from "@/components/lightswind/globe";
+
+const orbitIcons = [
+  {
+    angle: 0,
+    svg: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 3 5 6v5c0 5 3.5 8.5 7 10 3.5-1.5 7-5 7-10V6l-7-3z" />
+      </svg>
+    ),
+  },
+  {
+    angle: 72,
+    svg: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
+    ),
+  },
+  {
+    angle: 144,
+    svg: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="8" />
+        <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" />
+      </svg>
+    ),
+  },
+  {
+    angle: 216,
+    svg: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="2" y="6" width="20" height="12" rx="2" />
+        <path d="M2 10h20M7 15h2" />
+      </svg>
+    ),
+  },
+  {
+    angle: 288,
+    svg: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M3 12h13l4 4v-4h1" />
+        <path d="M5 12v5h8" />
+        <circle cx="7" cy="17" r="2" />
+        <circle cx="15" cy="17" r="2" />
+      </svg>
+    ),
+  },
+];
+
 const solution = () => {
   return (
     <div
@@ -14,9 +66,9 @@ const solution = () => {
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
         containerClassName="text-brand font-bold"
-        textClassName="text-brand font-bold text-sm md:text-base"
+        textClassName="text-brand font-semibold text-sm md:text-base"
       >
-        LA SOLUCIÓN
+        La Solución
       </ScrollFloat>
       <ScrollFloat
         animationDuration={1}
@@ -34,83 +86,159 @@ const solution = () => {
         lentos y la logística ineficiente, haciendo que vender y comprar sea
         simple y fluido.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+        <SpotlightCard
+          className="custom-spotlight-card col-span-2 md:col-span-2"
+          spotlightColor="hsl(200 100% 45%)"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-4 justify-center md:p-4 text-left">
+            <div className="flex-1 flex flex-col gap-4 items-start justify-center">
+              <div className="flex flex-row items-center gap-2">
+                <Image
+                  src="/solution/1.png"
+                  alt="Icono verificación inteligente"
+                  width={88}
+                  height={88}
+                  className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                  priority={false}
+                />
+                <h2 className="mx-2 text-text font-bold text-xl md:text-2xl">
+                  Verificación inteligente
+                </h2>
+              </div>
+
+              <p className="mx-2 text-text font-semibold text-sm md:text-base leading-snug md:leading-relaxed">
+                Usuarios reales. Tiendas reales. Ventas reales.
+              </p>
+              <p className="mx-2 text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
+                Nuestro sistema KYC/KYB con IA valida identidad, documentos y
+                biometría en segundos, garantizando usuarios legítimos y
+                reduciendo fraudes y contracargos hasta en un 70 %.
+              </p>
+              <Button variant="primary">Aprender más</Button>
+            </div>
+            <div className="hidden md:block w-px self-stretch bg-brand/40" aria-hidden="true" />
+            <div className="flex-1 flex items-center justify-center">
+              <Image
+                src="/didit-video.gif"
+                alt="Flujo de verificación Didit"
+                width={360}
+                height={760}
+                className="w-full max-w-2xs"
+                priority={false}
+              />
+            </div>
+          </div>
+
+        </SpotlightCard>
         <SpotlightCard
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="flex flex-col items-start gap-2 justify-center md:p-4 text-left">
-            <Image
-                src="/solution/1.png"
-                alt="Icono verificación inteligente"
-                width={88}
-                height={88}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
-            <h2 className="text-text font-bold text-xl md:text-xl">
-              Verificación inteligente
-            </h2>
-            <p className="text-text text-sm md:text-base leading-snug md:leading-relaxed">
-              Usuarios reales. Tiendas reales. Ventas reales.
-            </p>
-            <p className="text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
-              Nuestro sistema KYC/KYB con IA valida identidad, documentos y
-              biometría en segundos, garantizando usuarios legítimos y
-              reduciendo fraudes y contracargos hasta en un 70 %.
-            </p>
+          <div className="flex flex-col gap-4 md:p-4 text-left w-full min-h-[320px]">
+            <div className="flex-1 flex flex-col py-10 gap-4 items-start justify-center">
+              <div className="flex flex-row items-center gap-2">
+                <Image
+                  src="/solution/2.png"
+                  alt="Icono pagos rápidos y globales"
+                  width={88}
+                  height={88}
+                  className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                  priority={false}
+                />
+                <h2 className="mx-2 text-text font-bold text-xl md:text-xl">
+                  Pagos rápidos y globales
+                </h2>
+              </div>
+              <p className="mx-2 text-text font-semibold text-sm md:text-base leading-snug md:leading-relaxed">
+                Cobra desde México. Recibe desde el mundo.
+              </p>
+              <p className="mx-2 text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
+                Acepta pagos en pesos, dólares o criptomonedas con retiros
+                instantáneos a tu wallet o tarjeta Mastercard. Cobra sin fronteras
+                con tecnología que optimiza tasas y aprobaciones.
+              </p>
+              <Button variant="primary">Aprender más</Button>
+            </div>
+            <div className="hidden md:block h-px w-full bg-brand/30" aria-hidden="true" />
+            <div className="flex-1 flex items-center justify-center p-4 md:p-6">
+              <div
+                className="relative w-full max-w-[250px] md:max-w-[290px] aspect-square"
+                style={{ "--orbit-radius": "clamp(90px, 12.6vw, 144px)" } as CSSProperties}
+              >
+                <div className="absolute inset-[12%]" />
+                <div
+                  className="absolute inset-0 rounded-full border border-brand/40 animate-spin"
+                  style={{ animationDuration: "18s" }}
+                >
+                  {orbitIcons.map((icon) => (
+                    <div
+                      key={icon.angle}
+                      className="absolute top-1/2 left-1/2 w-10 h-10 rounded-full bg-brand/30 backdrop-blur-sm border border-white/20 flex items-center justify-center -translate-x-1/2 -translate-y-1/2"
+                      style={{
+                        transform: `rotate(${icon.angle}deg) translateY(calc(var(--orbit-radius) * -1)) rotate(-${icon.angle}deg)`,
+                      }}
+                    >
+                      {icon.svg}
+                    </div>
+                  ))}
+                </div>
+                <div className="absolute inset-[26%] rounded-full bg-white/5 border border-white/20 flex items-center justify-center">
+                  <Image
+                    src="/vita-logo-blanco.png"
+                    alt="Logo VITA"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                    style={{ width: "4.5rem", height: "4.5rem" }}
+                    priority={false}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </SpotlightCard>
         <SpotlightCard
           className="custom-spotlight-card"
           spotlightColor="hsl(200 100% 45%)"
         >
-          <div className="flex flex-col items-scenter gap-2 justify-center md:p-4 text-left">
-              <Image
-                src="/solution/2.png"
-                alt="Icono pagos rápidos y globales"
-                width={88}
-                height={88}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
+          <div className="flex flex-col gap-4 md:p-4 text-left w-full min-h-[320px]">
+            <div className="flex-1 flex flex-col py-10 gap-4 items-start justify-center">
+              <div className="flex flex-row items-center gap-2">
+                <Image
+                  src="/solution/3.png"
+                  alt="Icono envíos integrados y confiables"
+                  width={98}
+                  height={98}
+                  className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                  priority={false}
+                />
+                <h2 className="mx-2 text-text font-bold text-xl md:text-xl">
+                  Envíos integrados y confiables
+                </h2>
+              </div>
+              <p className="mx-2 text-text font-semibold text-sm md:text-base leading-snug md:leading-relaxed">
+                Entrega más rápido. Gana más confianza.
+              </p>
+              <p className="mx-2 text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
+                Gracias a nuestra integración con Cubbo, tus pedidos se gestionan
+                y envían automáticamente con seguimiento en tiempo real, entregas
+                rápidas y devoluciones simples que impulsan la recompra.
+              </p>
+              <Button variant="primary">Aprender más</Button>
+            </div>
+            <div className="hidden md:block h-px w-full bg-brand/30" aria-hidden="true" />
+            <div className="flex-1 p-4">
+              <Globe
+                theta={0.2}
+                dark={1}
+                scale={1.2}
+                diffuse={1.5}
+                baseColor="#1a1a1a"
+                markerColor="#ff0000"
+                glowColor="#444444"
               />
-            <h2 className="text-text font-bold text-xl md:text-xl">
-              Pagos rápidos y globales
-            </h2>
-            <p className="text-text text-sm md:text-base leading-snug md:leading-relaxed">
-              Cobra desde México. Recibe desde el mundo.
-            </p>
-            <p className="text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
-              Acepta pagos en pesos, dólares o criptomonedas con retiros
-              instantáneos a tu wallet o tarjeta Mastercard. Cobra sin fronteras
-              con tecnología que optimiza tasas y aprobaciones.
-            </p>
-          </div>
-        </SpotlightCard>
-        <SpotlightCard
-          className="custom-spotlight-card"
-          spotlightColor="hsl(200 100% 45%)"
-        >
-          <div className="flex flex-col items-scenter gap-2 justify-center md:p-4 text-left">
-              <Image
-                src="/solution/3.png"
-                alt="Icono envíos integrados y confiables"
-                width={98}
-                height={98}
-                className="w-12 h-12 md:w-16 md:h-16 object-contain"
-                priority={false}
-              />
-            <h2 className="text-text font-bold text-xl md:text-xl">
-              Envíos integrados y confiables
-            </h2>
-            <p className="text-text text-sm md:text-base leading-snug md:leading-relaxed">
-              Entrega más rápido. Gana más confianza.
-            </p>
-            <p className="text-text-secondary text-sm md:text-base leading-snug md:leading-relaxed">
-              Gracias a nuestra integración con Cubbo, tus pedidos se gestionan
-              y envían automáticamente con seguimiento en tiempo real, entregas
-              rápidas y devoluciones simples que impulsan la recompra.
-            </p>
+            </div>
           </div>
         </SpotlightCard>
       </div>

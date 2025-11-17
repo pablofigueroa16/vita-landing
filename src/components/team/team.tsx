@@ -14,10 +14,9 @@ const Team = () => {
         scrollStart="center bottom+=50%"
         scrollEnd="bottom bottom-=40%"
         stagger={0.03}
+        textClassName="text-brand font-semibold text-sm md:text-base"
       >
-        <h1 className="text-brand font-bold text-4xl md:text-4xl">
-          DREAM TEAM
-        </h1>
+        Dream Team
       </ScrollFloat>
 
       <h2 className="text-text font-bold text-4xl md:text-5xl">
