@@ -49,17 +49,9 @@ const solution = () => {
       >
         La Solución
       </ScrollFloat>
-      <ScrollFloat
-        animationDuration={1}
-        ease="back.inOut(2)"
-        scrollStart="center bottom+=50%"
-        scrollEnd="bottom bottom-=40%"
-        stagger={0.03}
-        containerClassName="text-brand font-bold"
-        textClassName="mx-[10%] text-text font-bold text-xl md:text-5xl"
-      >
+      <h2 className="text-text font-bold text-xl md:text-5xl">
         Una experiencia de comercio sin fricción, más rápida y más humana.
-      </ScrollFloat>
+      </h2>
       <p className="text-text-secondary mx-[10%] font-semibold text-xl md:text-base mb-4">
         VITA reinventa el e-commerce eliminando la falta de confianza, los pagos
         lentos y la logística ineficiente, haciendo que vender y comprar sea

@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import ScrollFloat from "../ScrollFloat";
 
 export interface ShowcaseCard {
   title: string;
@@ -120,11 +121,28 @@ const Showcase: React.FC<ShowcaseProps> = ({
       className={`relative w-full ${className}`}
       style={{ height: `${sectionHeightMultiplier * 100}vh` }}
     >
-      <div
-        className="sticky top-0 w-full h-screen flex items-center 
-          justify-center overflow-hidden"
-      >
-        <div className="container px-6 lg:px-8 mx-auto h-full flex flex-col justify-center">
+      <div className="sticky top-0 w-full h-screen flex items-center justify-center overflow-hidden">
+        <div className="container mt-10 px-6 lg:px-8 mx-auto h-full flex flex-col justify-center">
+          <div className="text-center space-y-4">
+            <ScrollFloat
+              animationDuration={1}
+              ease="back.inOut(2)"
+              scrollStart="center bottom+=50%"
+              scrollEnd="bottom bottom-=40%"
+              stagger={0.03}
+              containerClassName="text-brand font-bold"
+              textClassName="text-brand font-semibold text-sm md:text-base"
+            >
+              Ventajas Clave
+            </ScrollFloat>
+            <h2 className="mx-[10%] text-text font-bold text-xl md:text-4xl px-4">
+              E-commerce sin fricción, sin riesgo, sin límites
+            </h2>
+            <p className="mx-[10%] text-text-secondary font-semibold text-xl md:text-base">
+              Crecimiento real gracias a una experiencia diseñada para ser simple, segura y ultra rápida.
+            </p>
+          </div>
+          
           <div
             ref={cardsContainerRef}
             className="relative w-full max-w-5xl mx-auto shrink-0"
@@ -136,11 +154,10 @@ const Showcase: React.FC<ShowcaseProps> = ({
               return (
                 <div
                   key={index}
-                  className="absolute z-50 overflow-hidden shadow-2xl 
-                    transition-all duration-300 border"
+                  className="absolute z-50 overflow-hidden shadow-2xl transition-all duration-300 border-2 border-brand/50"
                   style={{
                     ...cardStyle,
-                    top: 0,
+                    top: -50,
                     left: "50%",
                     transform: `translateX(-50%) ${cardTransform.transform}`,
                     width: "60%",

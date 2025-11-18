@@ -64,28 +64,9 @@ const hero = () => {
         </p>
 
         <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-          <Button variant="primary">Lista de espera</Button>
-          <Button variant="secondary">Contactar ejecutivo</Button>
+          <Button href="#contact" variant="primary">Lista de espera</Button>
+          <Button target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/vitaplatform/posts/" variant="secondary">Contactar ejecutivo</Button>
         </div>
-
-        {/* <div className="mt-4 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-          <StarBorder
-            as="button"
-            className="custom-class"
-            color="cyan"
-            speed="3s"
-          >
-            Lista de espera
-          </StarBorder>
-          <StarBorder
-            as="button"
-            className="custom-class"
-            color="cyan"
-            speed="3s"
-          >
-            Contactar ejecutivo
-          </StarBorder>
-        </div> */}
       </div>
     </>
   );

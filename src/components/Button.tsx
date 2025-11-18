@@ -9,6 +9,9 @@ type LiquidGlassButtonProps = {
   variant?: Variant
   className?: string
   onClick?: () => void
+  href?: string
+  target?: string
+  rel?: string
 }
 
 export default function Button({
@@ -16,6 +19,9 @@ export default function Button({
   variant = "primary",
   className,
   onClick,
+  href,
+  target,
+  rel,
 }: LiquidGlassButtonProps) {
   const base = cn(
     // Layout
@@ -65,12 +71,24 @@ export default function Button({
     ),
   }
 
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        className={cn(base, variants[variant], className)}
+      >
+        {children}
+      </a>
+    )
+  }
+
   return (
     <button
       type="button"
       onClick={onClick}
       className={cn(base, variants[variant], className)}
-      // Accesible por teclado y con foco visible (cumple WCAG 2.1 AA)
       aria-pressed={false}
     >
       {children}

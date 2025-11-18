@@ -161,7 +161,7 @@ export default function VitaApp() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.9 }}
-        className="glass-card bg-card p-8 rounded-2xl shadow-xl border border-primary/40"
+        className="glass-card bg-primary/35 bg-gradient-to-br from-primary/25 via-card/15 to-primary/25 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-primary/30"
         >
           <h3 className="text-2xl font-semibold mb-6 text-center text-brand">
             Envía un mensaje rápido
@@ -177,7 +177,7 @@ export default function VitaApp() {
               value={formData.nombre}
               onChange={handleChange}
               required
-              className="input-field w-full px-4 py-2 rounded-xl border border-primary/40 bg-primary/20 focus:outline-none focus:ring-2 focus:ring-brand/50"
+              className="input-field w-full px-4 py-2 rounded-xl border border-primary/30 bg-primary/25 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand/60 focus:bg-primary/30 transition-all"
             />
           </div>
 
@@ -191,7 +191,7 @@ export default function VitaApp() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="input-field w-full px-4 py-2 rounded-xl border border-primary/40 bg-primary/20 focus:outline-none focus:ring-2 focus:ring-brand/50"
+              className="input-field w-full px-4 py-2 rounded-xl border border-primary/30 bg-primary/25 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand/60 focus:bg-primary/30 transition-all"
             />
           </div>
 
@@ -205,12 +205,12 @@ export default function VitaApp() {
               onChange={handleChange}
               required
               rows={4}
-              className="input-field w-full px-4 py-2 rounded-xl border border-primary/40 bg-primary/20 focus:outline-none focus:ring-2 focus:ring-brand/50"
+              className="input-field w-full px-4 py-2 rounded-xl border border-primary/30 bg-primary/25 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand/60 focus:bg-primary/30 transition-all"
             />
           </div>
 
           {messageStatus && (
-            <div className="mt-4 mb-4 p-3 rounded-xl text-center font-medium transition duration-500 bg-primary/35 text-brand border border-primary/40">
+            <div className="mt-4 mb-4 p-3 rounded-xl text-center font-medium transition duration-500 bg-primary/30 backdrop-blur-sm text-brand border border-primary/30">
               {messageStatus}
             </div>
           )}

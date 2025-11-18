@@ -33,7 +33,7 @@ const about = () => {
         />
       </h2>
 
-      <Button variant="primary">Regístrate gratis</Button>
+      <Button href="#contact" variant="primary">Regístrate gratis</Button>
 
       <div className="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-9 mt-8">
         {/* Card 1: IA */}

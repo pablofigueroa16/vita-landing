@@ -1,6 +1,7 @@
 "use client";
 import { FC, useMemo, useRef, useState, useLayoutEffect } from "react";
 import { motion, useScroll, useSpring, useTransform, useMotionValueEvent } from "framer-motion";
+import { Clock } from "lucide-react";
 import ScrollFloat from "../ScrollFloat";
 
 type TimelineItem = {
@@ -45,36 +46,6 @@ const items: TimelineItem[] = [
     side: "right",
   },
 ];
-
-const CalendarIcon: FC<{ className?: string }> = ({ className }) => (
-  <svg
-    aria-hidden="true"
-    viewBox="0 0 24 24"
-    className={className}
-    fill="currentColor"
-    role="img"
-  >
-    <rect
-      x="3"
-      y="5"
-      width="18"
-      height="16"
-      rx="2"
-      className="fill-transparent"
-    />
-    <path d="M7 3v4M17 3v4" stroke="currentColor" strokeWidth="2" />
-    <rect
-      x="3"
-      y="8"
-      width="18"
-      height="5"
-      className="fill-current"
-      opacity="0.15"
-    />
-    <rect x="6" y="14" width="4" height="3" className="fill-current" />
-    <rect x="12" y="14" width="4" height="3" className="fill-current" />
-  </svg>
-);
 
 const ScrollTimeline: FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -190,7 +161,7 @@ const ScrollTimeline: FC = () => {
                     role="article"
                   >
                     <div className="flex items-center gap-2 text-text-secondary mb-2">
-                      <CalendarIcon className="w-5 h-5 text-text-secondary" />
+                      <Clock className="w-5 h-5 text-text-secondary" />
                       <span className="text-xs md:text-sm font-medium">
                         {item.period}
                       </span>
@@ -225,7 +196,7 @@ const ScrollTimeline: FC = () => {
                     role="article"
                   >
                     <div className="flex items-center gap-2 text-text-secondary mb-2">
-                      <CalendarIcon className="w-5 h-5 text-text-secondary" />
+                      <Clock className="w-5 h-5 text-text-secondary" />
                       <span className="text-xs md:text-sm font-medium">
                         {item.period}
                       </span>
