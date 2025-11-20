@@ -21,19 +21,55 @@ export default function VitaApp() {
     setMessageStatus(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setMessageStatus(null);
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setMessageStatus(null);
 
-    setTimeout(() => {
+  try {
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.nombre,
+        email: formData.email,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
       setMessageStatus(
-        `¡Mensaje enviado! Gracias por conectar con Vita App, ${formData.nombre}.`
+        `¡Mensaje enviado correctamente! Gracias por conectar con Vita App, ${formData.nombre}.`
       );
       setFormData({ nombre: "", email: "", mensaje: "" });
-      setIsSubmitting(false);
-    }, 1000);
-  };
+    } else {
+      setMessageStatus(`Error: ${data.message || "No se pudo enviar el correo."}`);
+    }
+  } catch (error) {
+    console.error("Error en la solicitud:", error);
+    setMessageStatus("Ocurrió un error inesperado. Intenta de nuevo.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   setMessageStatus(null);
+
+  //   setTimeout(() => {
+  //     setMessageStatus(
+  //       `¡Mensaje enviado! Gracias por conectar con Vita App, ${formData.nombre}.`
+  //     );
+  //     setFormData({ nombre: "", email: "", mensaje: "" });
+  //     setIsSubmitting(false);
+  //   }, 1000);
+  // };
 
   const buttonClasses = `
     glass-button w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold

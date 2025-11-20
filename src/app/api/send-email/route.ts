@@ -41,7 +41,6 @@ export async function POST(request: Request) {
     const mailOptions = {
       from: `"The Vita Soporte" <${process.env.EMAIL_USER}>`,
       to: email,
-      cc: process.env.EMAIL_USER, // copia al correo de soporte
       subject: `¡Bienvenido a VITA, ${name}!`,
       html: htmlContent,
       attachments: [
