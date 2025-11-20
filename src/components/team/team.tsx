@@ -68,7 +68,7 @@ const Team = () => {
         <ProfileCard
           name="Manuel Ramos"
           title="Co-Founder & Software Engineer"
-          handle="menuelramos"
+          handle="manuelramos"
           status="Online"
           contactText="Contact Me"
           avatarUrl="/manuel1-removebg-preview.png"
