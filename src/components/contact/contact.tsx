@@ -78,7 +78,7 @@ export default function VitaApp() {
   `;
 
   return (
-    <main id="contact" className="min-h-screen bg-bg text-text flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
+    <main id="contact" className="min-h-screen text-text flex flex-col items-center justify-center px-6 overflow-hidden">
       <motion.div
         className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.15),transparent_60%)]"
         animate={{ opacity: [0.6, 0.8, 0.6] }}
