@@ -96,6 +96,7 @@ const solution = () => {
                 height={760}
                 className="w-full max-w-2xs"
                 priority={false}
+                unoptimized={true}
               />
             </div>
           </div>

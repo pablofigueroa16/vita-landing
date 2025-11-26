@@ -11,6 +11,7 @@ const LOGOS = [
   { src: "/logos/likenew.png", alt: "Logo aliado 5" },
   { src: "/logos/5.5.png", alt: "Logo aliado 6" },
   { src: "/logos/7.7.png", alt: "Logo aliado 7" },
+  { src: "/logos/fidestamp.png", alt: "Logo aliado 8" },
 ];
 
 export default function LogosMarquee() {
