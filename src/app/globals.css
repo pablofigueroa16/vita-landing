@@ -10,6 +10,8 @@
 
   --color-text: hsl(0 0% 95%);
   --color-text-secondary: hsl(0 0% 70%);
+
+  --font-family-modulus: var(--font-modulus);
 }
 
 .marquee-track {

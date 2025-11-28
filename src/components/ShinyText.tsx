@@ -5,6 +5,7 @@ interface ShinyTextProps {
   disabled?: boolean;
   speed?: number;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const ShinyText: React.FC<ShinyTextProps> = ({ text, disabled = false, speed = 5, className = '' }) => {
