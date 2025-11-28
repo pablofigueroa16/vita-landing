@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowRight, Mail, Phone } from "lucide-react";
 import { Youtube, Instagram, Linkedin, Music2 } from "lucide-react";
 
 export default function VitaApp() {
@@ -73,14 +73,15 @@ export default function VitaApp() {
 
   const buttonClasses = `
     glass-button w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold
+    bg-brand/20 border border-brand/40 hover:bg-brand/30 hover:border-brand/60 text-brand
     transition-all hover:scale-[1.03] active:scale-[0.98]
-    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand backdrop-blur-sm
   `;
 
   return (
     <main id="contact" className="min-h-screen text-text flex flex-col items-center justify-center px-6 overflow-hidden">
       <motion.div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.15),transparent_60%)]"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,168,232,0.08),transparent_60%)]"
         animate={{ opacity: [0.6, 0.8, 0.6] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -92,7 +93,7 @@ export default function VitaApp() {
         className="relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-12 items-start"
       >
         {/* LADO IZQUIERDO */}
-        <div className="p-8 md:p-0">
+        <div className="rounded-2xl">
           <motion.p
             className="text-sm font-semibold text-brand mb-2"
             initial={{ opacity: 0 }}
@@ -103,7 +104,7 @@ export default function VitaApp() {
           </motion.p>
 
           <motion.h2
-            className="text-5xl md:text-6xl font-bold mb-6 text-text"
+            className="text-4xl md:text-4xl font-bold mb-6 text-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -146,45 +147,45 @@ export default function VitaApp() {
             <div className="pt-4">
               <p className="text-xl font-semibold mb-4 text-brand">Síguenos:</p>
 
-              <div className="flex space-x-4">
+              <div className="flex space-x-3">
                 <motion.a
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.15, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                   href="#"
                   aria-label="YouTube"
-                  className="icon-btn"
+                  className="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/30 bg-primary/20 text-text hover:bg-brand/10 hover:text-brand hover:border-brand/50 transition-all backdrop-blur-sm"
                 >
-                  <Youtube className="w-6 h-6" />
+                  <Youtube className="w-5 h-5" />
                 </motion.a>
 
                 <motion.a
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.15, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                   href="https://www.instagram.com/thevita.global?igsh=cGJzcXhmNHFnZWhi"
                   aria-label="Instagram"
-                  className="icon-btn"
+                  className="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/30 bg-primary/20 text-text hover:bg-brand/10 hover:text-brand hover:border-brand/50 transition-all backdrop-blur-sm"
                 >
-                  <Instagram className="w-6 h-6" />
+                  <Instagram className="w-5 h-5" />
                 </motion.a>
 
                 <motion.a
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.15, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                   href="#"
                   aria-label="TikTok"
-                  className="icon-btn"
+                  className="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/30 bg-primary/20 text-text hover:bg-brand/10 hover:text-brand hover:border-brand/50 transition-all backdrop-blur-sm"
                 >
-                  <Music2 className="w-6 h-6" />
+                  <Music2 className="w-5 h-5" />
                 </motion.a>
 
                 <motion.a
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.15, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
                   href="https://www.linkedin.com/company/vitaplatform/"
                   aria-label="LinkedIn"
-                  className="icon-btn"
+                  className="w-10 h-10 flex items-center justify-center rounded-lg border border-primary/30 bg-primary/20 text-text hover:bg-brand/10 hover:text-brand hover:border-brand/50 transition-all backdrop-blur-sm"
                 >
-                  <Linkedin className="w-6 h-6" />
+                  <Linkedin className="w-5 h-5" />
                 </motion.a>
               </div>
             </div>
@@ -197,7 +198,7 @@ export default function VitaApp() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.9 }}
-        className="glass-card bg-primary/35 bg-gradient-to-br from-primary/25 via-card/15 to-primary/25 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-primary/30"
+          className="glass-card bg-primary/35 bg-linear-to-r from-primary/25 via-card/15 to-primary/25 backdrop-blur-md p-8 rounded-2xl shadow-xl border border-primary/30"
         >
           <h3 className="text-2xl font-semibold mb-6 text-center text-brand">
             Envía un mensaje rápido
@@ -213,7 +214,7 @@ export default function VitaApp() {
               value={formData.nombre}
               onChange={handleChange}
               required
-              className="input-field w-full px-4 py-2 rounded-xl border border-primary/30 bg-primary/25 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand/60 focus:bg-primary/30 transition-all"
+              className="input-field w-full px-4 py-2 rounded-xl border border-primary/30 bg-primary/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand/50 focus:bg-primary/25 transition-all"
             />
           </div>
 
@@ -227,7 +228,7 @@ export default function VitaApp() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="input-field w-full px-4 py-2 rounded-xl border border-primary/30 bg-primary/25 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand/60 focus:bg-primary/30 transition-all"
+              className="input-field w-full px-4 py-2 rounded-xl border border-primary/30 bg-primary/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand/50 focus:bg-primary/25 transition-all"
             />
           </div>
 
@@ -241,12 +242,12 @@ export default function VitaApp() {
               onChange={handleChange}
               required
               rows={4}
-              className="input-field w-full px-4 py-2 rounded-xl border border-primary/30 bg-primary/25 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand/60 focus:bg-primary/30 transition-all"
+              className="input-field w-full px-4 py-2 rounded-xl border border-primary/30 bg-primary/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand/50 focus:bg-primary/25 transition-all"
             />
           </div>
 
           {messageStatus && (
-            <div className="mt-4 mb-4 p-3 rounded-xl text-center font-medium transition duration-500 bg-primary/30 backdrop-blur-sm text-brand border border-primary/30">
+            <div className="mt-4 mb-4 p-3 rounded-xl text-center font-medium transition duration-500 bg-brand/10 backdrop-blur-sm text-brand border border-brand/30">
               {messageStatus}
             </div>
           )}
