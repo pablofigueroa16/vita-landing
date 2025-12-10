@@ -22,39 +22,39 @@ export default function VitaApp() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  setMessageStatus(null);
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessageStatus(null);
 
-  try {
-    const response = await fetch("/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: formData.nombre,
-        email: formData.email,
-      }),
-    });
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.nombre,
+          email: formData.email,
+        }),
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (response.ok) {
-      setMessageStatus(
-        `¡Mensaje enviado correctamente! Gracias por conectar con Vita App, ${formData.nombre}.`
-      );
-      setFormData({ nombre: "", email: "", mensaje: "" });
-    } else {
-      setMessageStatus(`Error: ${data.message || "No se pudo enviar el correo."}`);
+      if (response.ok) {
+        setMessageStatus(
+          `¡Mensaje enviado correctamente! Gracias por conectar con Vita App, ${formData.nombre}.`
+        );
+        setFormData({ nombre: "", email: "", mensaje: "" });
+      } else {
+        setMessageStatus(`Error: ${data.message || "No se pudo enviar el correo."}`);
+      }
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+      setMessageStatus("Ocurrió un error inesperado. Intenta de nuevo.");
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error("Error en la solicitud:", error);
-    setMessageStatus("Ocurrió un error inesperado. Intenta de nuevo.");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
 
   // const handleSubmit = (e: React.FormEvent) => {

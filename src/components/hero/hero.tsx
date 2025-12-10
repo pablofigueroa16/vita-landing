@@ -22,12 +22,15 @@ const hero = () => {
         />
       </div>
       <NavBar />
-      <div id="home" className="relative min-h-screen w-full z-10 flex flex-col items-center justify-center gap-4 px-6 text-center pt-36">
-            <AnnouncementPill className="mb-2" />
+      <div
+        id="home"
+        className="relative z-10 flex min-h-svh w-full flex-col items-center justify-center gap-4 px-4 pt-24 pb-10 text-center sm:px-6 md:min-h-screen md:gap-6 md:pt-36 md:pb-24"
+      >
+        <AnnouncementPill className="mb-2" />
         <div className="flex items-center justify-center">
           <TextType
             as="h1"
-            className="max-w-5xl text-white text-4xl font-bold md:text-7xl"
+            className="max-w-3xl text-balance text-3xl font-bold leading-tight text-white sm:text-4xl md:max-w-5xl md:text-7xl md:leading-tight"
             text={["Crea, Cobra, Escala"]}
             typingSpeed={60}
             deletingSpeed={60}
@@ -46,7 +49,7 @@ const hero = () => {
         </div>
         <SplitText
           text="Todo en una sola plataforma"
-          className="text-6xl font-bold text-center text-white"
+          className="text-balance text-3xl font-bold leading-tight text-center text-white sm:text-4xl md:text-6xl md:leading-tight"
           delay={100}
           duration={0.8}
           ease="power3.out"
@@ -57,13 +60,13 @@ const hero = () => {
           rootMargin="-100px"
           textAlign="center"
         />
-        <p className="max-w-lg text-sm font-medium text-text-secondary md:text-lg">
+        <p className="max-w-xl text-balance text-sm font-medium text-text-secondary sm:text-base md:text-lg">
           Diseña tu tienda en menos de 5 minutos, recibe pagos globales con
           Mastercard y vende solo a clientes verificados. Simple, rápido y
           seguro para todos.
         </p>
 
-        <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+        <div className="mt-5 flex w-full max-w-lg flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:items-center sm:justify-center sm:gap-4">
           <Button href="#contact" variant="primary">Lista de espera</Button>
           <Button target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/vitaplatform/posts/" variant="secondary">Contactar ejecutivo</Button>
         </div>
