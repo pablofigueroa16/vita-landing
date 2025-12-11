@@ -22,14 +22,14 @@ export default function LogosMarquee() {
 
   return (
     <section
-      className="pb-12 md:pb-16 bg-black"
+      className="pt-6 pb-10 md:pb-16 bg-black"
     >
       <div className="relative mt-10 overflow-hidden">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-28 md:w-32 bg-linear-to-r from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-28 md:w-32 bg-linear-to-l from-background to-transparent" />
 
         <div
-          className="marquee-track flex items-center gap-12"
+          className="marquee-track flex items-center gap-8 sm:gap-10 md:gap-12"
           data-paused={paused}
           onMouseEnter={handlePause}
           onMouseLeave={handleResume}
@@ -37,7 +37,7 @@ export default function LogosMarquee() {
           {items.map((logo, index) => (
             <div
               key={`${logo.src}-${index}`}
-              className="flex min-w-[160px] items-center justify-center"
+              className="flex min-w-[120px] sm:min-w-[140px] md:min-w-[160px] items-center justify-center"
               onMouseEnter={handlePause}
               onFocus={handlePause}
               onBlur={handleResume}
@@ -47,7 +47,7 @@ export default function LogosMarquee() {
                 alt={logo.alt}
                 width={160}
                 height={80}
-                className="h-20 w-auto filter grayscale opacity-80 transition-opacity duration-200 hover:opacity-100"
+                className="h-12 sm:h-14 md:h-20 w-auto filter grayscale opacity-80 transition-opacity duration-200 hover:opacity-100"
                 loading="lazy"
               />
             </div>
